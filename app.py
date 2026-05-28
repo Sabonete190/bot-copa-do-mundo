@@ -24,7 +24,7 @@ def calcular_kelly(probabilidade, odd):
     return max(kelly, 0)
 # CONFIGURAÇÃO DA PÁGINA
 st.set_page_config(
-    page_title="Bot libertadores",
+    page_title="Bot copa do mundo",
     layout="centered"
 )
 
@@ -44,7 +44,7 @@ st.write("Preencha os dados da partida.")
 # HISTÓRICO CSV
 # =========================
 
-ARQUIVO_HISTORICO = "historico_libertadores.csv"
+ARQUIVO_HISTORICO = "historico_copa.csv"
 
 # =========================
 # GITHUB
@@ -336,7 +336,7 @@ campeonato = st.text_input(
 )
 
 # =========================
-# DADOS DA LIBERTADORES
+# DADOS DA COPA DO MUNDO
 # =========================
 
 media_gols_liga = 2.19
@@ -1571,7 +1571,7 @@ if st.button("Salvar Resultado"):
         "Lucro": round(lucro, 2)
     }
 
-    arquivo_resultados = "resultados_libertadores.csv"
+    arquivo_resultados = "resultados_copa.csv"
 
     df_novo = pd.DataFrame(
         [dados_resultado]
@@ -1620,7 +1620,7 @@ if st.button("Salvar Resultado"):
 # ESTATÍSTICAS DO BOT
 # =========================
 
-arquivo_resultados = "resultados_libertadores.csv"
+arquivo_resultados = "resultados_copa.csv"
 
 if os.path.exists(arquivo_resultados):
 
