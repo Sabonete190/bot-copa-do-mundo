@@ -334,6 +334,16 @@ time_fora = st.text_input(
 campeonato = st.text_input(
     "Campeonato"
 )
+fase_copa = st.selectbox(
+    "Fase da Copa",
+    [
+        "Grupos",
+        "Oitavas",
+        "Quartas",
+        "Semifinal",
+        "Final"
+    ]
+)
 
 # =========================
 # DADOS DA COPA DO MUNDO
@@ -350,6 +360,44 @@ media_mandante_liga = 0.49
 media_visitante_liga = 0.28
 
 media_empate_liga = 0.23
+
+# =========================
+# AJUSTE POR FASE
+# =========================
+
+ajuste_under = 1.0
+ajuste_empate = 1.0
+ajuste_btts = 1.0
+
+if fase_copa == "Grupos":
+
+    ajuste_under = 1.00
+    ajuste_empate = 1.00
+    ajuste_btts = 1.00
+
+elif fase_copa == "Oitavas":
+
+    ajuste_under = 1.08
+    ajuste_empate = 1.10
+    ajuste_btts = 0.94
+
+elif fase_copa == "Quartas":
+
+    ajuste_under = 1.12
+    ajuste_empate = 1.15
+    ajuste_btts = 0.90
+
+elif fase_copa == "Semifinal":
+
+    ajuste_under = 1.18
+    ajuste_empate = 1.22
+    ajuste_btts = 0.85
+
+elif fase_copa == "Final":
+
+    ajuste_under = 1.25
+    ajuste_empate = 1.30
+    ajuste_btts = 0.80
 
 # =========================
 # BOTÃO
@@ -477,7 +525,7 @@ if st.button("Analisar Jogo"):
         )
 
         st.write("---")
-        # =========================
+    # =========================
     # TOP PLACARES
     # =========================
 
@@ -529,9 +577,14 @@ if st.button("Analisar Jogo"):
         gols_esperados_casa +
         gols_esperados_fora
     )
+# =========================
+# AJUSTE TÁTICO COPA
+# =========================
+
+total_gols_esperados /= ajuste_under
 
     # =========================
-    # AJUSTE DA LIGA
+    # AJUSTE DA COPA DO MUNDO
     # =========================
 
     
@@ -609,6 +662,7 @@ if st.button("Analisar Jogo"):
 
         / 0.43
     )
+prob_btts_sim *= ajuste_btts
 
     prob_btts_sim = min(
         prob_btts_sim,
@@ -786,7 +840,7 @@ if st.button("Analisar Jogo"):
         f"Kelly BTTS NÃO: "
         f"{round(kelly_btts_nao * 100, 2)}%"
     )
- # =========================
+    # =========================
     # PROBABILIDADES PRÓPRIAS
     # =========================
 
@@ -803,6 +857,8 @@ if st.button("Analisar Jogo"):
     equilibrio = abs(prob_casa_modelo - prob_fora_modelo)
 
     prob_empate_modelo = 0.30 - (equilibrio * 0.2)
+
+    prob_empate_modelo *= ajuste_empate
 
     prob_empate_modelo = max(0.10, prob_empate_modelo)
 
@@ -1102,7 +1158,7 @@ if st.button("Analisar Jogo"):
         st.error(
             "❌ Jogo Sem Valor"
         )
-# =========================
+    # =========================
     # MELHOR MERCADO
     # =========================
 
@@ -1179,13 +1235,31 @@ if st.button("Analisar Jogo"):
     st.write(
         f"Stake Recomendada: {stake}% da banca"
     )
-# =========================
+    # =========================
     # PERFIL DO JOGO
     # =========================
 
     st.subheader("Perfil da Partida")
 
+    st.write(f"Fase da Copa: {fase_copa}")
+
+    if fase_copa == "Final":
+
+    st.warning(
+        "Jogo extremamente conservador"
+        )
+
+    elif fase_copa == "Semifinal":
+
+    st.info(
+        "Tendência forte de Under"
+        )
+
     perfil_jogo = "⚖️ Equilibrado"
+
+    if fase_copa != "Grupos":
+
+    perfil_jogo = "🏆 Mata-Mata Tenso"
 
     total_xg = (
         gols_esperados_casa +
