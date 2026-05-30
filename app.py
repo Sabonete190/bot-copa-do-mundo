@@ -299,7 +299,7 @@ with st.expander("📊 Dados dos Times"):
          step=0.1
     )
 
-    s.ofridos_fora = st.number_input(
+    sofridos_fora = st.number_input(
          "Gols Sofridos Fora",
          min_value=0.0,
          step=0.1
