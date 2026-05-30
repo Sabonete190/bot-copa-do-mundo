@@ -577,11 +577,11 @@ if st.button("Analisar Jogo"):
         gols_esperados_casa +
         gols_esperados_fora
     )
-# =========================
-# AJUSTE TÁTICO COPA
-# =========================
+    # =========================
+    # AJUSTE TÁTICO COPA
+    # =========================
 
-total_gols_esperados /= ajuste_under
+    total_gols_esperados /= ajuste_under
 
     # =========================
     # AJUSTE DA COPA DO MUNDO
