@@ -267,67 +267,67 @@ with st.expander("🔥 BTTS"):
 # DADOS DOS TIMES
 # =========================
 
-st.subheader("Dados dos Times")
+with st.expander("📊 Dados dos Times"):
 
-xg_casa = st.number_input(
-    "xG Casa",
-    min_value=0.0,
-    step=0.1
-)
+    xg_casa = st.number_input(
+        "xG Casa",
+        min_value=0.0,
+        step=0.1
+    )
 
-xg_fora = st.number_input(
-    "xG Fora",
-    min_value=0.0,
-    step=0.1
-)
+    xg_fora = st.number_input(
+        "xG Fora",
+        min_value=0.0,
+        step=0.1
+    )
 
-xga_casa = st.number_input(
-    "xGA Casa",
-    min_value=0.0,
-    step=0.1
-)
+    xga_casa = st.number_input(
+         "xGA Casa",
+         min_value=0.0,
+         step=0.1
+    )
 
-xga_fora = st.number_input(
-    "xGA Fora",
-    min_value=0.0,
-    step=0.1
-)
+    xga_fora = st.number_input(
+         "xGA Fora",
+         min_value=0.0,
+         step=0.1
+    )
 
-sofridos_casa = st.number_input(
-    "Gols Sofridos Casa",
-    min_value=0.0,
-    step=0.1
-)
+    sofridos_casa = st.number_input(
+         "Gols Sofridos Casa",
+         min_value=0.0,
+         step=0.1
+    )
 
-sofridos_fora = st.number_input(
-    "Gols Sofridos Fora",
-    min_value=0.0,
-    step=0.1
-)
+    s.ofridos_fora = st.number_input(
+         "Gols Sofridos Fora",
+         min_value=0.0,
+         step=0.1
+    )
 
-chutes_casa = st.number_input(
-    "Chutes no Gol Casa",
-    min_value=0.0,
-    step=0.1
-)
+    chutes_casa = st.number_input(
+         "Chutes no Gol Casa",
+         min_value=0.0,
+         step=0.1
+    )
 
-chutes_fora = st.number_input(
-    "Chutes no Gol Fora",
-    min_value=0.0,
-    step=0.1
-)
+    chutes_fora = st.number_input(
+         "Chutes no Gol Fora",
+         min_value=0.0,
+         step=0.1
+    )
 
-eficiencia_casa = st.number_input(
-    "Eficiência Casa",
-    min_value=0.0,
-    step=0.1
-)
+    eficiencia_casa = st.number_input(
+         "Eficiência Casa",
+         min_value=0.0,
+         step=0.1
+    )
 
-eficiencia_fora = st.number_input(
-    "Eficiência Fora",
-    min_value=0.0,
-    step=0.1
-)
+    eficiencia_fora = st.number_input(
+         "Eficiência Fora",
+         min_value=0.0,
+         step=0.1
+    )
 # =========================
 # FORMA RECENTE
 # =========================
