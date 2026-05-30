@@ -332,21 +332,21 @@ with st.expander("📊 Dados dos Times"):
 # FORMA RECENTE
 # =========================
 
-st.subheader("Forma Recente")
+with st.expander("📈 Forma Recente"):
 
-forma_casa = st.number_input(
-    "Forma Casa (últimos 5 jogos)",
-    min_value=0,
-    max_value=15,
-    step=1
-)
+    forma_casa = st.number_input(
+         "Forma Casa (últimos 5 jogos)",
+         min_value=0,
+         max_value=15,
+         step=1
+    )
 
-forma_fora = st.number_input(
-    "Forma Fora (últimos 5 jogos)",
-    min_value=0,
-    max_value=15,
-    step=1
-)
+    forma_fora = st.number_input(
+         "Forma Fora (últimos 5 jogos)",
+         min_value=0,
+         max_value=15,
+         step=1
+    )
 
 # =========================
 # FORÇA AUTOMÁTICA
