@@ -73,9 +73,25 @@ if "melhor_mercado" not in st.session_state:
     st.session_state["melhor_mercado"] = "N/A"
 
 # TÍTULO
-st.title("📊 Bot de Apostas Profissional")
+st.markdown("""
+<div style="
+background:#111827;
+padding:20px;
+border-radius:15px;
+text-align:center;
+margin-bottom:20px;
+">
 
-st.write("Preencha os dados da partida.")
+<h1 style="color:white;">
+🏆 BOT COPA DO MUNDO
+</h1>
+
+<p style="color:#9ca3af;">
+Modelo Estatístico Profissional
+</p>
+
+</div>
+""", unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 
