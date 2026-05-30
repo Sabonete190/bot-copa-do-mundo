@@ -27,6 +27,42 @@ st.set_page_config(
     page_title="Bot copa do mundo",
     layout="centered"
 )
+st.markdown("""
+<style>
+
+.stApp{
+    background:#0b0f19;
+}
+
+h1,h2,h3{
+    color:white;
+}
+
+p,label{
+    color:#d1d5db;
+}
+
+div[data-testid="stNumberInput"]{
+    background:#151c2c;
+    padding:8px;
+    border-radius:12px;
+}
+
+div[data-testid="stTextInput"]{
+    background:#151c2c;
+    padding:8px;
+    border-radius:12px;
+}
+
+.stButton button{
+    width:100%;
+    border-radius:12px;
+    height:50px;
+    font-weight:bold;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # =========================
 # SESSION STATE
