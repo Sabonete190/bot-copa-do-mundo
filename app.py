@@ -1132,7 +1132,7 @@ st.write(
     # DECISÃO INTELIGENTE
     # =========================
 
-    st.subheader("Decisão do Modelo")
+st.subheader("Decisão do Modelo")
 
     melhor_edge = max(
         edge_casa,
