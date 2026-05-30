@@ -1125,9 +1125,9 @@ if st.button("Analisar Jogo"):
     
     st.progress(confianca / 10)
 
-st.write(
+    st.write(
     f"Confiança: {round(confianca, 1)}/10"
-)
+    )
     # =========================
     # DECISÃO INTELIGENTE
     # =========================
