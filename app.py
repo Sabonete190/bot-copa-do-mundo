@@ -587,8 +587,6 @@ total_gols_esperados /= ajuste_under
     # AJUSTE DA COPA DO MUNDO
     # =========================
 
-    
-
     prob_under25 = 0
 
     for gols in range(3):
