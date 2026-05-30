@@ -659,7 +659,7 @@ if st.button("Analisar Jogo"):
 
         / 0.43
     )
-prob_btts_sim *= ajuste_btts
+    prob_btts_sim *= ajuste_btts
 
     prob_btts_sim = min(
         prob_btts_sim,
