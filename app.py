@@ -750,54 +750,54 @@ st.write(
         f"EV BTTS NÃO: "
         f"{round(ev_btts_nao, 2)}"
     )
-    # =========================
-    # EDGE OVER/BTTS
-    # =========================
+# =========================
+# EDGE OVER/BTTS
+# =========================
 
-    edge_over25 = (
+edge_over25 = (
         prob_over25 -
         (1 / odd_over25)
     )
 
-    edge_under25 = (
+edge_under25 = (
         prob_under25 -
         (1 / odd_under25)
     )
 
-    edge_btts_sim = (
+edge_btts_sim = (
         prob_btts_sim -
         (1 / odd_btts_sim)
     )
 
-    edge_btts_nao = (
+edge_btts_nao = (
         prob_btts_nao -
         (1 / odd_btts_nao)
     )
 
-    st.subheader("Edge Over/BTTS")
+st.subheader("Edge Over/BTTS")
 
-    st.write(
+st.write(
         f"Edge Over 2.5: "
         f"{round(edge_over25 * 100, 2)}%"
     )
 
-    st.write(
+st.write(
         f"Edge Under 2.5: "
         f"{round(edge_under25 * 100, 2)}%"
     )
 
-    st.write(
+st.write(
         f"Edge BTTS SIM: "
         f"{round(edge_btts_sim * 100, 2)}%"
     )
 
-    st.write(
+st.write(
         f"Edge BTTS NÃO: "
         f"{round(edge_btts_nao * 100, 2)}%"
     )
-    # =========================
-    # KELLY OVER/BTTS
-    # =========================
+# =========================
+# KELLY OVER/BTTS
+# =========================
 
     kelly_over25 = calcular_kelly(
         prob_over25,
