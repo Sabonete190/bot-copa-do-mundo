@@ -669,14 +669,14 @@ prob_btts_sim = min(
         0.95
     )
 
-    st.subheader("BTTS")
+st.subheader("BTTS")
 
-    st.write(
+st.write(
         f"BTTS SIM: "
         f"{round(prob_btts_sim * 100, 2)}%"
     )
 
-    st.write(
+st.write(
         f"BTTS NÃO: "
         f"{round(prob_btts_nao * 100, 2)}%"
     )
