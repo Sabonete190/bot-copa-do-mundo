@@ -589,7 +589,7 @@ total_gols_esperados /= ajuste_under
 
     
 
-    prob_under25 = 0
+prob_under25 = 0
 
     for gols in range(3):
 
