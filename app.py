@@ -189,23 +189,24 @@ def salvar_aposta(dados):
 
 with st.expander("⚽ Mercado 1X2", expanded=True):
 
-odd_casa = st.number_input(
-    "Odd Casa",
-    min_value=1.0,
-    step=0.01
-)
+    odd_casa = st.number_input(
+        "Odd Casa",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_empate = st.number_input(
-    "Odd Empate",
-    min_value=1.0,
-    step=0.01
-)
+    odd_empate = st.number_input(
+        "Odd Empate",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_fora = st.number_input(
-    "Odd Fora",
-    min_value=1.0,
-    step=0.01
-)
+    odd_fora = st.number_input(
+        "Odd Fora",
+        min_value=1.0,
+        step=0.01
+    )
+
 
 # =========================
 # OVER / UNDER
