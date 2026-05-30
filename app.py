@@ -589,11 +589,11 @@ total_gols_esperados /= ajuste_under
 
     
 
-prob_under25 = 0
+    prob_under25 = 0
 
-for gols in range(3):
+    for gols in range(3):
 
-    prob_under25 += poisson(
+        prob_under25 += poisson(
             total_gols_esperados,
             gols
         )
@@ -664,65 +664,65 @@ for gols in range(3):
     )
 prob_btts_sim *= ajuste_btts
 
-prob_btts_sim = min(
+    prob_btts_sim = min(
         prob_btts_sim,
         0.95
     )
 
-st.subheader("BTTS")
+    st.subheader("BTTS")
 
-st.write(
+    st.write(
         f"BTTS SIM: "
         f"{round(prob_btts_sim * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"BTTS NÃO: "
         f"{round(prob_btts_nao * 100, 2)}%"
     )
-# =========================
-# ODDS JUSTAS BTTS
-# =========================
+    # =========================
+    # ODDS JUSTAS BTTS
+    # =========================
 
-odd_justa_btts_sim = (
+    odd_justa_btts_sim = (
         1 / prob_btts_sim
     )
 
-odd_justa_btts_nao = (
+    odd_justa_btts_nao = (
         1 / prob_btts_nao
     )
 
-st.subheader("Odds Justas BTTS")
+    st.subheader("Odds Justas BTTS")
 
-st.write(
+    st.write(
         f"Odd Justa BTTS SIM: "
         f"{round(odd_justa_btts_sim, 2)}"
     )
 
-st.write(
+    st.write(
         f"Odd Justa BTTS NÃO: "
         f"{round(odd_justa_btts_nao, 2)}"
     )
-# =========================
-# EV OVER/UNDER
-# =========================
+    # =========================
+    # EV OVER/UNDER
+    # =========================
 
-ev_over25 = (
+    ev_over25 = (
         prob_over25 * odd_over25
     ) - 1
 
-ev_under25 = (
+    ev_under25 = (
         prob_under25 * odd_under25
     ) - 1
 
-st.subheader("EV Over/Under")
+    st.subheader("EV Over/Under")
 
-st.write(
+    st.write(
         f"EV Over 2.5: "
         f"{round(ev_over25, 2)}"
     )
 
-st.write(
+    st.write(
         f"EV Under 2.5: "
         f"{round(ev_under25, 2)}"
     )
@@ -731,127 +731,126 @@ st.write(
     # EV BTTS
     # =========================
 
-ev_btts_sim = (
+    ev_btts_sim = (
         prob_btts_sim * odd_btts_sim
     ) - 1
 
-ev_btts_nao = (
+    ev_btts_nao = (
         prob_btts_nao * odd_btts_nao
     ) - 1
 
-st.subheader("EV BTTS")
+    st.subheader("EV BTTS")
 
-st.write(
+    st.write(
         f"EV BTTS SIM: "
         f"{round(ev_btts_sim, 2)}"
     )
 
-st.write(
+    st.write(
         f"EV BTTS NÃO: "
         f"{round(ev_btts_nao, 2)}"
     )
-# =========================
-# EDGE OVER/BTTS
-# =========================
+    # =========================
+    # EDGE OVER/BTTS
+    # =========================
 
-edge_over25 = (
+    edge_over25 = (
         prob_over25 -
         (1 / odd_over25)
     )
 
-edge_under25 = (
+    edge_under25 = (
         prob_under25 -
         (1 / odd_under25)
     )
 
-edge_btts_sim = (
+    edge_btts_sim = (
         prob_btts_sim -
         (1 / odd_btts_sim)
     )
 
-edge_btts_nao = (
+    edge_btts_nao = (
         prob_btts_nao -
         (1 / odd_btts_nao)
     )
 
-st.subheader("Edge Over/BTTS")
+    st.subheader("Edge Over/BTTS")
 
-st.write(
+    st.write(
         f"Edge Over 2.5: "
         f"{round(edge_over25 * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Edge Under 2.5: "
         f"{round(edge_under25 * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Edge BTTS SIM: "
         f"{round(edge_btts_sim * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Edge BTTS NÃO: "
         f"{round(edge_btts_nao * 100, 2)}%"
     )
-# =========================
-# KELLY OVER/BTTS
-# =========================
+    # =========================
+    # KELLY OVER/BTTS
+    # =========================
 
-    
-kelly_over25 = calcular_kelly(
+    kelly_over25 = calcular_kelly(
         prob_over25,
         odd_over25
     )
 
-kelly_under25 = calcular_kelly(
+    kelly_under25 = calcular_kelly(
         prob_under25,
         odd_under25
     )
 
-kelly_btts_sim = calcular_kelly(
+    kelly_btts_sim = calcular_kelly(
         prob_btts_sim,
         odd_btts_sim
     )
 
-kelly_btts_nao = calcular_kelly(
+    kelly_btts_nao = calcular_kelly(
         prob_btts_nao,
         odd_btts_nao
     )
 
-st.subheader("Kelly Over/BTTS")
+    st.subheader("Kelly Over/BTTS")
 
-st.write(
+    st.write(
         f"Kelly Over 2.5: "
         f"{round(kelly_over25 * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Kelly Under 2.5: "
         f"{round(kelly_under25 * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Kelly BTTS SIM: "
         f"{round(kelly_btts_sim * 100, 2)}%"
     )
 
-st.write(
+    st.write(
         f"Kelly BTTS NÃO: "
         f"{round(kelly_btts_nao * 100, 2)}%"
     )
-# =========================
-# PROBABILIDADES PRÓPRIAS
-# =========================
+    # =========================
+    # PROBABILIDADES PRÓPRIAS
+    # =========================
 
-forca_total = ataque_casa + ataque_fora + defesa_casa + defesa_fora
+    forca_total = ataque_casa + ataque_fora + defesa_casa + defesa_fora
 
-prob_casa_modelo = (
+    prob_casa_modelo = (
         ataque_casa + defesa_fora
     ) / forca_total
 
-prob_fora_modelo = (
+    prob_fora_modelo = (
         ataque_fora + defesa_casa
     ) / forca_total
 
