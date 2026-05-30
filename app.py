@@ -1828,8 +1828,8 @@ if not df_stats.empty:
         reds
     )
 
-   with col7:
-    st.metric(
+    with col7:
+      st.metric(
         "⚪ Voids",
         voids
     )
