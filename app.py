@@ -40,6 +40,20 @@ if "melhor_mercado" not in st.session_state:
 st.title("📊 Bot de Apostas Profissional")
 
 st.write("Preencha os dados da partida.")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("ROI", "--")
+
+with col2:
+    st.metric("Winrate", "--")
+
+with col3:
+    st.metric("Lucro", "--")
+
+with col4:
+    st.metric("Apostas", "--")
 # =========================
 # HISTÓRICO CSV
 # =========================
@@ -1108,10 +1122,12 @@ if st.button("Analisar Jogo"):
     )
 
     st.subheader("Confiança do Modelo")
+    
+    st.progress(confianca / 10)
 
-    st.write(
-        f"Confiança: {round(confianca, 1)}/10"
-    )
+st.write(
+    f"Confiança: {round(confianca, 1)}/10"
+)
     # =========================
     # DECISÃO INTELIGENTE
     # =========================
@@ -1340,10 +1356,17 @@ if st.button("Analisar Jogo"):
             f"{melhor_mercado}"
         )
 
-        st.write(
-            f"Edge: "
-            f"{round(melhor_edge_final * 100, 2)}%"
-        )
+        st.markdown(
+    f"""
+## 🔥 TOP APOSTA
+
+### {melhor_mercado}
+
+Edge: {round(melhor_edge_final * 100, 2)}%
+
+Stake: {stake}%
+"""
+)
 
     else:
 
@@ -1762,32 +1785,46 @@ if not df_stats.empty:
         roi = 0
 
     st.write(
-        f"Total de Apostas: {total_apostas}"
+    col1, col2 = st.columns(2)
+
+    with col1:
+    st.metric(
+        "Apostas",
+        total_apostas
     )
 
-    st.write(
-        f"🟢 Greens: {greens}"
+    with col2:
+    st.metric(
+        "Winrate",
+        f"{round(winrate,2)}%"
     )
 
-    st.write(
-        f"🔴 Reds: {reds}"
+    col3, col4 = st.columns(2)
+
+    with col3:
+    st.metric(
+        "ROI",
+        f"{round(roi,2)}%"
     )
 
-    st.write(
-        f"⚪ Voids: {voids}"
+    with col4:
+    st.metric(
+        "Lucro",
+        f"R$ {round(lucro_total,2)}"
     )
 
-    st.write(
-        f"🎯 Winrate: {round(winrate, 2)}%"
-    )
+    st.write("---")
 
-    st.write(
-        f"💰 Lucro Total: R$ {round(lucro_total, 2)}"
-    )
+    col5, col6, col7 = st.columns(3)
 
-    st.write(
-        f"📈 ROI: {round(roi, 2)}%"
-    )
+    with col5:
+    st.metric("🟢 Greens", greens)
+
+    with col6:
+    st.metric("🔴 Reds", reds)
+
+    with col7:
+    st.metric("⚪ Voids", voids)
 
 else:
 
