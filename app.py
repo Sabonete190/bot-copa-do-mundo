@@ -664,7 +664,7 @@ for gols in range(3):
     )
 prob_btts_sim *= ajuste_btts
 
-    prob_btts_sim = min(
+prob_btts_sim = min(
         prob_btts_sim,
         0.95
     )
