@@ -1248,7 +1248,7 @@ if st.button("Analisar Jogo"):
 
     elif fase_copa == "Semifinal":
 
-    st.info(
+        st.info(
         "Tendência forte de Under"
         )
 
@@ -1256,7 +1256,7 @@ if st.button("Analisar Jogo"):
 
     if fase_copa != "Grupos":
 
-    perfil_jogo = "🏆 Mata-Mata Tenso"
+       perfil_jogo = "🏆 Mata-Mata Tenso"
 
     total_xg = (
         gols_esperados_casa +
