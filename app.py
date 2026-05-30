@@ -703,26 +703,26 @@ st.write(
         f"Odd Justa BTTS NÃO: "
         f"{round(odd_justa_btts_nao, 2)}"
     )
-    # =========================
-    # EV OVER/UNDER
-    # =========================
+# =========================
+# EV OVER/UNDER
+# =========================
 
-    ev_over25 = (
+ev_over25 = (
         prob_over25 * odd_over25
     ) - 1
 
-    ev_under25 = (
+ev_under25 = (
         prob_under25 * odd_under25
     ) - 1
 
-    st.subheader("EV Over/Under")
+st.subheader("EV Over/Under")
 
-    st.write(
+st.write(
         f"EV Over 2.5: "
         f"{round(ev_over25, 2)}"
     )
 
-    st.write(
+st.write(
         f"EV Under 2.5: "
         f"{round(ev_under25, 2)}"
     )
