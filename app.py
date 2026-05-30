@@ -470,7 +470,7 @@ elif fase_copa == "Final":
 # BOTÃO
 # =========================
 
-if st.button("Analisar Jogo"):
+if st.button("🚀 ANALISAR JOGO"):
 
     
     # =========================
