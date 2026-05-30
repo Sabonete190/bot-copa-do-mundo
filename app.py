@@ -731,22 +731,22 @@ st.write(
     # EV BTTS
     # =========================
 
-    ev_btts_sim = (
+ev_btts_sim = (
         prob_btts_sim * odd_btts_sim
     ) - 1
 
-    ev_btts_nao = (
+ev_btts_nao = (
         prob_btts_nao * odd_btts_nao
     ) - 1
 
-    st.subheader("EV BTTS")
+st.subheader("EV BTTS")
 
-    st.write(
+st.write(
         f"EV BTTS SIM: "
         f"{round(ev_btts_sim, 2)}"
     )
 
-    st.write(
+st.write(
         f"EV BTTS NÃO: "
         f"{round(ev_btts_nao, 2)}"
     )
