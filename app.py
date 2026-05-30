@@ -591,9 +591,9 @@ total_gols_esperados /= ajuste_under
 
 prob_under25 = 0
 
-    for gols in range(3):
+for gols in range(3):
 
-        prob_under25 += poisson(
+    prob_under25 += poisson(
             total_gols_esperados,
             gols
         )
