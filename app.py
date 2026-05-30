@@ -1785,13 +1785,13 @@ if not df_stats.empty:
         roi = 0
 
     st.write(f"Apostas: {total_apostas}")
-st.write(f"Winrate: {round(winrate,2)}%")
-st.write(f"ROI: {round(roi,2)}%")
-st.write(f"Lucro: R$ {round(lucro_total,2)}")
+    st.write(f"Winrate: {round(winrate,2)}%")
+    st.write(f"ROI: {round(roi,2)}%")
+    st.write(f"Lucro: R$ {round(lucro_total,2)}")
 
-st.write(f"🟢 Greens: {greens}")
-st.write(f"🔴 Reds: {reds}")
-st.write(f"⚪ Voids: {voids}")
+    st.write(f"🟢 Greens: {greens}")
+    st.write(f"🔴 Reds: {reds}")
+    st.write(f"⚪ Voids: {voids}")
 
 else:
 
