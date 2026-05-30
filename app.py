@@ -242,27 +242,27 @@ with st.expander("🎯 Over / Under"):
 # BTTS
 # =========================
 
-st.subheader("BTTS")
+with st.expander("🔥 BTTS"):
 
-odd_btts_sim = st.number_input(
-    "Odd BTTS SIM",
-    min_value=1.0,
-    step=0.01
-)
+    odd_btts_sim = st.number_input(
+        "Odd BTTS SIM",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_btts_nao = st.number_input(
-    "Odd BTTS NÃO",
-    min_value=1.0,
-    step=0.01
-)
+    odd_btts_nao = st.number_input(
+        "Odd BTTS NÃO",
+        min_value=1.0,
+        step=0.01
+     )
 
 
-posicao_fora = st.number_input(
-    "Posição Time Fora",
-    min_value=1,
-    max_value=20,
-    value=10
-)
+    posicao_fora = st.number_input(
+        "Posição Time Fora",
+        min_value=1,
+        max_value=20,
+        value=10
+     )
 # =========================
 # DADOS DOS TIMES
 # =========================
