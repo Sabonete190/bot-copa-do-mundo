@@ -1242,7 +1242,7 @@ if st.button("Analisar Jogo"):
 
     if fase_copa == "Final":
 
-    st.warning(
+       st.warning(
         "Jogo extremamente conservador"
         )
 
