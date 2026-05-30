@@ -1404,10 +1404,24 @@ if st.button("🚀 ANALISAR JOGO"):
 
     if melhor_edge_final > 0:
 
-        st.success(
-            f"🔥 Melhor Aposta: "
-            f"{melhor_mercado}"
-        )
+        st.markdown(f"""
+    <div style="
+    background:#16a34a;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    ">
+
+    <h2 style="color:white;">
+    🔥 MELHOR APOSTA
+    </h2>
+
+    <h1 style="color:white;">
+    {melhor_mercado}
+    </h1>
+
+    </div>
+    """, unsafe_allow_html=True)
 
         st.markdown(
     f"""
