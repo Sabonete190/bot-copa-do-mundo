@@ -1004,10 +1004,6 @@ if st.button("🚀 ANALISAR JOGO"):
     st.write(f"Fora: {round(prob_fora * 100, 2)}%")
 
     # =========================
-    # EV
-    # =========================
-
-    # =========================
     # EV DO MODELO
     # =========================
 
@@ -1176,7 +1172,9 @@ if st.button("🚀 ANALISAR JOGO"):
 
     st.subheader("Confiança do Modelo")
     
-    st.progress(confianca / 10)
+    st.write(
+       f"Confiança: {round(confianca,1)}/10"
+    )
 
     st.write(
     f"Confiança: {round(confianca, 1)}/10"
