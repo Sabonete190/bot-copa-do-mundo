@@ -680,26 +680,26 @@ st.write(
         f"BTTS NÃO: "
         f"{round(prob_btts_nao * 100, 2)}%"
     )
-    # =========================
-    # ODDS JUSTAS BTTS
-    # =========================
+# =========================
+# ODDS JUSTAS BTTS
+# =========================
 
-    odd_justa_btts_sim = (
+odd_justa_btts_sim = (
         1 / prob_btts_sim
     )
 
-    odd_justa_btts_nao = (
+odd_justa_btts_nao = (
         1 / prob_btts_nao
     )
 
-    st.subheader("Odds Justas BTTS")
+st.subheader("Odds Justas BTTS")
 
-    st.write(
+st.write(
         f"Odd Justa BTTS SIM: "
         f"{round(odd_justa_btts_sim, 2)}"
     )
 
-    st.write(
+st.write(
         f"Odd Justa BTTS NÃO: "
         f"{round(odd_justa_btts_nao, 2)}"
     )
