@@ -187,7 +187,7 @@ def salvar_aposta(dados):
 # ODDS 1X2
 # =========================
 
-st.subheader("Mercado 1X2")
+with st.expander("⚽ Mercado 1X2", expanded=True):
 
 odd_casa = st.number_input(
     "Odd Casa",
