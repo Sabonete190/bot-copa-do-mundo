@@ -212,31 +212,31 @@ with st.expander("⚽ Mercado 1X2", expanded=True):
 # OVER / UNDER
 # =========================
 
-st.subheader("Over / Under")
+with st.expander("🎯 Over / Under"):
 
-odd_over15 = st.number_input(
-    "Odd Over 1.5",
-    min_value=1.0,
-    step=0.01
-)
+    odd_over15 = st.number_input(
+        "Odd Over 1.5",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_over25 = st.number_input(
-    "Odd Over 2.5",
-    min_value=1.0,
-    step=0.01
-)
+    odd_over25 = st.number_input(
+        "Odd Over 2.5",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_under25 = st.number_input(
-    "Odd Under 2.5",
-    min_value=1.0,
-    step=0.01
-)
+    odd_under25 = st.number_input(
+        "Odd Under 2.5",
+        min_value=1.0,
+        step=0.01
+    )
 
-odd_over35 = st.number_input(
-    "Odd Over 3.5",
-    min_value=1.0,
-    step=0.01
-)
+    odd_over35 = st.number_input(
+        "Odd Over 3.5",
+        min_value=1.0,
+        step=0.01
+    )
 
 # =========================
 # BTTS
