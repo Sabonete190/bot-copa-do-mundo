@@ -1788,13 +1788,13 @@ if not df_stats.empty:
     col1, col2 = st.columns(2)
 
     with col1:
-    st.metric(
+      st.metric(
         "Apostas",
         total_apostas
     )
 
     with col2:
-    st.metric(
+      st.metric(
         "Winrate",
         f"{round(winrate,2)}%"
     )
@@ -1802,13 +1802,13 @@ if not df_stats.empty:
     col3, col4 = st.columns(2)
 
     with col3:
-    st.metric(
+      st.metric(
         "ROI",
         f"{round(roi,2)}%"
     )
 
     with col4:
-    st.metric(
+      st.metric(
         "Lucro",
         f"R$ {round(lucro_total,2)}"
     )
@@ -1818,13 +1818,13 @@ if not df_stats.empty:
     col5, col6, col7 = st.columns(3)
 
     with col5:
-    st.metric("🟢 Greens", greens)
+      st.metric("🟢 Greens", greens)
 
     with col6:
-    st.metric("🔴 Reds", reds)
+      st.metric("🔴 Reds", reds)
 
     with col7:
-    st.metric("⚪ Voids", voids)
+      st.metric("⚪ Voids", voids)
 
 else:
 
