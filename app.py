@@ -411,6 +411,23 @@ fase_copa = st.selectbox(
         "Final"
     ]
 )
+# =========================
+# RANKING ELO
+# =========================
+
+elo_casa = st.number_input(
+    "Ranking Elo Casa",
+    min_value=1000,
+    max_value=2500,
+    value=2000
+)
+
+elo_fora = st.number_input(
+    "Ranking Elo Fora",
+    min_value=1000,
+    max_value=2500,
+    value=2000
+)
 
 # =========================
 # DADOS DA COPA DO MUNDO
@@ -545,6 +562,36 @@ if st.button("🚀 ANALISAR JOGO"):
 
     gols_esperados_fora = (
         ataque_fora / (defesa_casa + 0.5)
+    )
+    # =========================
+    # AJUSTE ELO / FIFA
+    # =========================
+
+    diferenca_elo = (
+        elo_casa - elo_fora
+    )
+
+    ajuste_elo = (
+        diferenca_elo / 2000
+    )
+
+    ajuste_elo = max(
+        -0.20,
+        min(ajuste_elo, 0.20)
+    )
+
+    gols_esperados_casa += ajuste_elo
+
+    gols_esperados_fora -= ajuste_elo
+
+    gols_esperados_casa = max(
+        gols_esperados_casa,
+        0.10
+    )
+
+    gols_esperados_fora = max(
+        gols_esperados_fora,
+        0.10
     )
 
     st.subheader("Gols Esperados")
