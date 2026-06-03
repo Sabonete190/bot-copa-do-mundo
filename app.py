@@ -2021,3 +2021,65 @@ else:
     st.warning(
         "Nenhum resultado salvo ainda."
     )
+
+# =========================
+# COMPARAR PREVISÃO VS RESULTADO
+# =========================
+
+if os.path.exists("aprendizado_copa.csv"):
+
+    try:
+
+        df_aprendizado = pd.read_csv(
+            "aprendizado_copa.csv"
+        )
+
+        df_aprendizado = (
+            df_aprendizado[
+                df_aprendizado["Resultado"]
+                != "PENDENTE"
+            ]
+        )
+
+        if not df_aprendizado.empty:
+
+            st.subheader(
+                "📈 Comparação Previsão vs Resultado"
+            )
+
+            mercados = (
+                df_aprendizado["Mercado"]
+                .unique()
+            )
+
+            for mercado in mercados:
+
+                df_mercado = (
+                    df_aprendizado[
+                        df_aprendizado["Mercado"]
+                        == mercado
+                    ]
+                )
+
+                total = len(df_mercado)
+
+                greens = len(
+                    df_mercado[
+                        df_mercado["Resultado"]
+                        == "GREEN"
+                    ]
+                )
+
+                acerto = (
+                    greens / total
+                ) * 100
+
+                st.write(
+                    f"{mercado}: "
+                    f"{round(acerto,1)}%"
+                    f" ({greens}/{total})"
+                )
+
+    except:
+
+        pass
