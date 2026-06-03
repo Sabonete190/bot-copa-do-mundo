@@ -186,6 +186,36 @@ def salvar_aposta(dados):
         index=False
     )
 
+def salvar_aprendizado(dados):
+
+    arquivo = "aprendizado_copa.csv"
+
+    linha = pd.DataFrame([{
+        "Data": dados["Data"],
+        "Jogo": dados["Jogo"],
+        "Mercado": dados["Mercado"],
+        "Probabilidade": dados["Probabilidade"],
+        "Resultado": dados["Resultado"]
+    }])
+
+    if os.path.exists(arquivo):
+
+        df = pd.read_csv(arquivo)
+
+        df = pd.concat(
+            [df, linha],
+            ignore_index=True
+        )
+
+    else:
+
+        df = linha
+
+    df.to_csv(
+        arquivo,
+        index=False
+    )
+    
 # =========================
 # ODDS 1X2
 # =========================
