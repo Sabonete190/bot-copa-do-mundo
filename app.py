@@ -1536,6 +1536,16 @@ if st.button("Salvar Aposta"):
 
         "Campeonato": campeonato,
 
+        "Prob Casa": round(prob_casa_modelo, 4),
+
+        "Prob Empate": round(prob_empate_modelo, 4),
+
+        "Prob Fora": round(prob_fora_modelo, 4),
+
+        "Prob Over25": round(prob_over25, 4),
+
+        "Prob BTTS": round(prob_btts_sim, 4),
+
         "Mercado": st.session_state.get(
             "melhor_mercado",
             "N/A"
