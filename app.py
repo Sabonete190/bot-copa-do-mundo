@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import requests
 import base64
+from datetime import datetime
 
 # =========================
 # FUNÇÃO KELLY
@@ -1632,7 +1633,22 @@ if st.button("Salvar Aposta"):
         "Perfil": st.session_state.get(
             "perfil_jogo",
             "N/A"
-        )
+        ),
+        
+        "Data": datetime.now().strftime(
+            "%Y-%m-%d"
+        ),
+
+        "Probabilidade": round(
+            max(
+                prob_casa_modelo,
+                prob_empate_modelo,
+                prob_fora_modelo
+            ),
+            4
+        ),
+
+        "Resultado": "PENDENTE"
     }
 
     salvar_aposta(
