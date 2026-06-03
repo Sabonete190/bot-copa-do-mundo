@@ -1917,9 +1917,7 @@ if os.path.exists("aprendizado_copa.csv"):
             index=False
         )
 
-        salvar_no_github(
-            "aprendizado_copa.csv"
-        )
+        
 
     except:
 
