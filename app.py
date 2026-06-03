@@ -446,6 +446,18 @@ media_visitante_liga = 0.28
 media_empate_liga = 0.23
 
 # =========================
+# PESOS DINÂMICOS
+# =========================
+
+peso_elo = 2000
+
+peso_forma = 100
+
+peso_under = 1.00
+
+peso_btts = 1.00
+
+# =========================
 # AJUSTE POR FASE
 # =========================
 
