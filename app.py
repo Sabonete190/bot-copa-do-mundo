@@ -1917,15 +1917,15 @@ if os.path.exists("aprendizado_copa.csv"):
             index=False
         )
 
-        
+        salvar_no_github(
+            "aprendizado_copa.csv"
+        )
 
     except:
 
         pass
 
-    salvar_no_github(
-      "resultados_copa.csv"
-    )
+   
 
     st.success(
         "✅ Resultado salvo"
