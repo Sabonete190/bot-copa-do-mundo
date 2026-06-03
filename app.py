@@ -1884,6 +1884,47 @@ if st.button("Salvar Resultado"):
         index=False
     )
 
+# =========================
+# ATUALIZAR APRENDIZADO
+# =========================
+
+if os.path.exists("aprendizado_copa.csv"):
+
+    try:
+
+        df_aprendizado = pd.read_csv(
+            "aprendizado_copa.csv"
+        )
+
+        filtro = (
+            (df_aprendizado["Jogo"] ==
+             f"{time_casa_resultado} x {time_fora_resultado}")
+            &
+            (df_aprendizado["Mercado"] ==
+             mercado_resultado)
+            &
+            (df_aprendizado["Resultado"] ==
+             "PENDENTE")
+        )
+
+        df_aprendizado.loc[
+            filtro,
+            "Resultado"
+        ] = resultado_aposta
+
+        df_aprendizado.to_csv(
+            "aprendizado_copa.csv",
+            index=False
+        )
+
+        salvar_no_github(
+            "aprendizado_copa.csv"
+        )
+
+    except:
+
+        pass
+
     salvar_no_github(
         arquivo_resultados
     )
