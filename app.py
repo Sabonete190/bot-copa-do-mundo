@@ -1926,7 +1926,7 @@ if os.path.exists("aprendizado_copa.csv"):
         pass
 
     salvar_no_github(
-        arquivo_resultados
+      "resultados_copa.csv"
     )
 
     st.success(
