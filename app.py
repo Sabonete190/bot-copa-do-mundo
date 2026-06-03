@@ -112,6 +112,8 @@ with col4:
 
 ARQUIVO_HISTORICO = "historico_copa.csv"
 
+ARQUIVO_APRENDIZADO = "aprendizado_copa.csv"
+
 # =========================
 # GITHUB
 # =========================
