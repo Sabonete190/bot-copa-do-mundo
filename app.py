@@ -216,11 +216,14 @@ def salvar_aprendizado(dados):
         arquivo,
         index=False
     )
-    def atualizar_pesos():
+
+def atualizar_pesos():
 
     arquivo = "aprendizado_copa.csv"
 
-    if not os.path.exists(arquivo):
+    if not os.path.exists(
+        arquivo
+    ):
 
         return
 
@@ -239,14 +242,18 @@ def salvar_aprendizado(dados):
 
         peso_btts = 1.00
 
-        # UNDER
+        # =========================
+        # UNDER 2.5
+        # =========================
 
         df_under = df[
             df["Mercado"]
             == "Under 2.5"
         ]
 
-        if len(df_under) >= 20:
+        if len(
+            df_under
+        ) >= 20:
 
             taxa = (
 
@@ -257,23 +264,34 @@ def salvar_aprendizado(dados):
                     ]
                 )
 
-                / len(df_under)
+                / len(
+                    df_under
+                )
 
             )
 
             peso_under = round(
-                0.80 + (taxa * 0.40),
+
+                0.80 +
+
+                (taxa * 0.40),
+
                 2
+
             )
 
-        # BTTS
+        # =========================
+        # BTTS SIM
+        # =========================
 
         df_btts = df[
             df["Mercado"]
             == "BTTS SIM"
         ]
 
-        if len(df_btts) >= 20:
+        if len(
+            df_btts
+        ) >= 20:
 
             taxa = (
 
@@ -284,30 +302,41 @@ def salvar_aprendizado(dados):
                     ]
                 )
 
-                / len(df_btts)
+                / len(
+                    df_btts
+                )
 
             )
 
             peso_btts = round(
-                0.80 + (taxa * 0.40),
+
+                0.80 +
+
+                (taxa * 0.40),
+
                 2
+
             )
 
-        pd.DataFrame([{
+        df_pesos = pd.DataFrame([{
 
             "peso_under": peso_under,
 
             "peso_btts": peso_btts
 
-        }]).to_csv(
+        }])
+
+        df_pesos.to_csv(
+
             "pesos_modelo.csv",
+
             index=False
+
         )
 
     except:
 
         pass
-    
 # =========================
 # ODDS 1X2
 # =========================
