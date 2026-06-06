@@ -2098,6 +2098,63 @@ if os.path.exists("aprendizado_copa.csv"):
 
                 st.divider()
 
+                st.subheader(
+                   "🎯 Calibração das Probabilidades"
+                )
+
+                faixas = [
+
+                ("50-60%", 0.50, 0.60),
+
+                ("60-70%", 0.60, 0.70),
+  
+                ("70-80%", 0.70, 0.80),
+
+                ("80-90%", 0.80, 0.90),
+
+                ("90%+", 0.90, 1.00)
+
+              ]
+
+              for nome, minimo, maximo in faixas:
+
+                 df_faixa = df_aprendizado[
+
+                   (df_aprendizado["Probabilidade"] >= minimo)
+
+                   &
+
+                   (df_aprendizado["Probabilidade"] < maximo)
+
+                 ]
+
+                 total = len(df_faixa)
+
+                 if total > 0:
+
+                    greens = len(
+
+                      df_faixa[
+                        df_faixa["Resultado"]
+                        == "GREEN"
+                      ]
+
+                  )
+
+                  taxa = (
+                    greens / total
+                  ) * 100
+
+                  st.write(
+
+                     f"{nome} → "
+
+                     f"{round(taxa,1)}% "
+
+                     f"({greens}/{total})"
+
+                  )
+
     except:
 
         pass
