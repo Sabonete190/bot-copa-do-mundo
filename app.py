@@ -216,6 +216,97 @@ def salvar_aprendizado(dados):
         arquivo,
         index=False
     )
+    def atualizar_pesos():
+
+    arquivo = "aprendizado_copa.csv"
+
+    if not os.path.exists(arquivo):
+
+        return
+
+    try:
+
+        df = pd.read_csv(
+            arquivo
+        )
+
+        df = df[
+            df["Resultado"]
+            != "PENDENTE"
+        ]
+
+        peso_under = 1.00
+
+        peso_btts = 1.00
+
+        # UNDER
+
+        df_under = df[
+            df["Mercado"]
+            == "Under 2.5"
+        ]
+
+        if len(df_under) >= 20:
+
+            taxa = (
+
+                len(
+                    df_under[
+                        df_under["Resultado"]
+                        == "GREEN"
+                    ]
+                )
+
+                / len(df_under)
+
+            )
+
+            peso_under = round(
+                0.80 + (taxa * 0.40),
+                2
+            )
+
+        # BTTS
+
+        df_btts = df[
+            df["Mercado"]
+            == "BTTS SIM"
+        ]
+
+        if len(df_btts) >= 20:
+
+            taxa = (
+
+                len(
+                    df_btts[
+                        df_btts["Resultado"]
+                        == "GREEN"
+                    ]
+                )
+
+                / len(df_btts)
+
+            )
+
+            peso_btts = round(
+                0.80 + (taxa * 0.40),
+                2
+            )
+
+        pd.DataFrame([{
+
+            "peso_under": peso_under,
+
+            "peso_btts": peso_btts
+
+        }]).to_csv(
+            "pesos_modelo.csv",
+            index=False
+        )
+
+    except:
+
+        pass
     
 # =========================
 # ODDS 1X2
