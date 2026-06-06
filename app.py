@@ -2071,89 +2071,101 @@ if os.path.exists("aprendizado_copa.csv"):
                 acerto = (
                     greens / total
                 ) * 100
-                
+
                 st.write(
-                   f"🎯 {mercado}"
+                    f"🎯 {mercado}"
                 )
 
                 st.write(
-                f"🟢 Greens: {greens}"
+                    f"🟢 Greens: {greens}"
                 )
 
                 reds = len(
-                  df_mercado[
-                    df_mercado["Resultado"]
-                    == "RED"
-                  ]
+                    df_mercado[
+                        df_mercado["Resultado"]
+                        == "RED"
+                    ]
                 )
 
                 st.write(
-                   f"🔴 Reds: {reds}"
+                    f"🔴 Reds: {reds}"
                 )
 
                 st.write(
-                   f"📈 Acerto: "
-                   f"{round(acerto,1)}%"
+                    f"📈 Acerto: "
+                    f"{round(acerto,1)}%"
                 )
 
                 st.divider()
 
-                st.subheader(
-                   "🎯 Calibração das Probabilidades"
-                )
+            # =========================
+            # CALIBRAÇÃO
+            # =========================
 
-                faixas = [
+            st.subheader(
+                "🎯 Calibração das Probabilidades"
+            )
+
+            faixas = [
 
                 ("50-60%", 0.50, 0.60),
 
                 ("60-70%", 0.60, 0.70),
-  
+
                 ("70-80%", 0.70, 0.80),
 
                 ("80-90%", 0.80, 0.90),
 
                 ("90%+", 0.90, 1.00)
 
-             ]
+            ]
 
-             for nome, minimo, maximo in faixas:
+            for nome, minimo, maximo in faixas:
 
-                 df_faixa = df_aprendizado[
+                df_faixa = df_aprendizado[
 
-                   (df_aprendizado["Probabilidade"] >= minimo)
+                    (
+                        df_aprendizado["Probabilidade"]
+                        >= minimo
+                    )
 
-                   &
+                    &
 
-                   (df_aprendizado["Probabilidade"] < maximo)
+                    (
+                        df_aprendizado["Probabilidade"]
+                        < maximo
+                    )
 
-                 ]
+                ]
 
-                 total = len(df_faixa)
+                total = len(
+                    df_faixa
+                )
 
-                 if total > 0:
+                if total > 0:
 
                     greens = len(
 
-                      df_faixa[
-                        df_faixa["Resultado"]
-                        == "GREEN"
-                      ]
+                        df_faixa[
+                            df_faixa["Resultado"]
+                            == "GREEN"
+                        ]
 
-                  )
+                    )
 
-                  taxa = (
-                    greens / total
-                  ) * 100
+                    taxa = (
+                        greens / total
+                    ) * 100
 
-                  st.write(
+                    st.write(
 
-                     f"{nome} → "
+                        f"{nome} → "
 
-                     f"{round(taxa,1)}% "
+                        f"{round(taxa,1)}% "
 
-                     f"({greens}/{total})"
+                        f"({greens}/{total})"
 
-                  )
+                    )
 
     except:
 
