@@ -2071,12 +2071,32 @@ if os.path.exists("aprendizado_copa.csv"):
                 acerto = (
                     greens / total
                 ) * 100
+                
+                st.write(
+                   f"🎯 {mercado}"
+                )
 
                 st.write(
-                    f"{mercado}: "
-                    f"{round(acerto,1)}%"
-                    f" ({greens}/{total})"
+                f"🟢 Greens: {greens}"
                 )
+
+                reds = len(
+                  df_mercado[
+                    df_mercado["Resultado"]
+                    == "RED"
+                  ]
+                )
+
+                st.write(
+                   f"🔴 Reds: {reds}"
+                )
+
+                st.write(
+                   f"📈 Acerto: "
+                   f"{round(acerto,1)}%"
+                )
+
+                st.divider()
 
     except:
 
