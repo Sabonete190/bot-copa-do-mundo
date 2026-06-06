@@ -876,6 +876,15 @@ if st.button("🚀 ANALISAR JOGO"):
         )
 
     prob_over25 = 1 - prob_under25
+    
+    prob_under25 *= peso_under
+
+    prob_under25 = min(
+        prob_under25,
+        0.95
+    )
+
+    prob_over25 = 1 - prob_under25
 
     st.subheader("Over/Under 2.5")
 
@@ -940,6 +949,8 @@ if st.button("🚀 ANALISAR JOGO"):
         / 0.43
     )
     prob_btts_sim *= ajuste_btts
+    
+    prob_btts_sim *= peso_btts
 
     prob_btts_sim = min(
         prob_btts_sim,
