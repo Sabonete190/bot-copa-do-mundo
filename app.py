@@ -2234,6 +2234,71 @@ if os.path.exists("aprendizado_copa.csv"):
                         f"({greens}/{total})"
 
                     )
+                    st.subheader(
+                "🎮 Desempenho por Perfil de Jogo"
+            )
+
+            perfis = (
+                df_aprendizado["Perfil"]
+                .dropna()
+                .unique()
+            )
+
+            for perfil in perfis:
+
+                df_perfil = (
+                    df_aprendizado[
+                        df_aprendizado["Perfil"]
+                        == perfil
+                    ]
+                )
+
+                total = len(
+                    df_perfil
+                )
+
+                greens = len(
+                    df_perfil[
+                        df_perfil["Resultado"]
+                        == "GREEN"
+                    ]
+                )
+
+                reds = len(
+                    df_perfil[
+                        df_perfil["Resultado"]
+                        == "RED"
+                    ]
+                )
+
+                if total > 0:
+
+                    taxa = (
+                        greens / total
+                    ) * 100
+
+                else:
+
+                    taxa = 0
+
+                st.write(
+                    f"🎯 {perfil}"
+                )
+
+                st.write(
+                    f"🟢 Greens: {greens}"
+                )
+
+                st.write(
+                    f"🔴 Reds: {reds}"
+                )
+
+                st.write(
+                    f"📈 Acerto: "
+                    f"{round(taxa,1)}%"
+                )
+
+                st.divider()
 
     except:
 
