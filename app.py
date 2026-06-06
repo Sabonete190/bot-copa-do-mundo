@@ -191,12 +191,13 @@ def salvar_aprendizado(dados):
     arquivo = "aprendizado_copa.csv"
 
     linha = pd.DataFrame([{
-        "Data": dados["Data"],
-        "Jogo": dados["Jogo"],
-        "Mercado": dados["Mercado"],
-        "Probabilidade": dados["Probabilidade"],
-        "Resultado": dados["Resultado"]
-    }])
+    "Data": dados["Data"],
+    "Jogo": dados["Jogo"],
+    "Mercado": dados["Mercado"],
+    "Probabilidade": dados["Probabilidade"],
+    "Resultado": dados["Resultado"],
+    "Perfil": dados["Perfil"]
+}])
 
     if os.path.exists(arquivo):
 
