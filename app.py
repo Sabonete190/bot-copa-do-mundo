@@ -2114,9 +2114,9 @@ if os.path.exists("aprendizado_copa.csv"):
 
                 ("90%+", 0.90, 1.00)
 
-              ]
+             ]
 
-              for nome, minimo, maximo in faixas:
+             for nome, minimo, maximo in faixas:
 
                  df_faixa = df_aprendizado[
 
