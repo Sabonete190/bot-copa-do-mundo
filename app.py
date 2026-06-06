@@ -2119,6 +2119,11 @@ if os.path.exists("aprendizado_copa.csv"):
         salvar_no_github(
             "aprendizado_copa.csv"
         )
+        atualizar_pesos()
+
+        salvar_no_github(
+            "pesos_modelo.csv"
+        )
 
     except:
 
