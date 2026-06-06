@@ -1685,6 +1685,41 @@ if st.button("Salvar Aposta"):
     salvar_aposta(
         dados_aposta
     )
+    prob_aprendizado = 0
+
+    mercado_aprendizado = st.session_state.get(
+        "melhor_mercado",
+        "N/A"
+    )
+
+    if mercado_aprendizado == "Casa":
+
+        prob_aprendizado = prob_casa_modelo
+
+    elif mercado_aprendizado == "Empate":
+
+        prob_aprendizado = prob_empate_modelo
+
+    elif mercado_aprendizado == "Fora":
+
+        prob_aprendizado = prob_fora_modelo
+
+    elif mercado_aprendizado == "Over 2.5":
+
+        prob_aprendizado = prob_over25
+
+    elif mercado_aprendizado == "Under 2.5":
+
+        prob_aprendizado = prob_under25
+
+    elif mercado_aprendizado == "BTTS SIM":
+
+        prob_aprendizado = prob_btts_sim
+
+    elif mercado_aprendizado == "BTTS NÃO":
+
+        prob_aprendizado = prob_btts_nao
+        
     dados_aprendizado = {
 
         "Data": datetime.now().strftime(
@@ -1702,14 +1737,9 @@ if st.button("Salvar Aposta"):
         ),
 
         "Probabilidade": round(
-            max(
-                prob_casa_modelo,
-                prob_empate_modelo,
-                prob_fora_modelo
-            ),
+            prob_aprendizado,
             4
         ),
-
         "Resultado": "PENDENTE"
     }
 
