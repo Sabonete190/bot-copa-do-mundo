@@ -1684,7 +1684,42 @@ if st.button("Salvar Aposta"):
 
     salvar_aposta(
         dados_aposta
-    )
+    )   
+
+    dados_aprendizado = {
+
+    "Data": datetime.now().strftime(
+        "%Y-%m-%d"
+    ),
+
+    "Jogo": f"{time_casa} x {time_fora}",
+
+    "Mercado": st.session_state.get(
+        "melhor_mercado",
+        "N/A"
+    ),
+
+    "Probabilidade": round(
+        max(
+            prob_casa_modelo,
+            prob_empate_modelo,
+            prob_fora_modelo
+        ),
+        4
+    ),
+
+    "Resultado": "PENDENTE"
+}
+
+salvar_aprendizado(
+    dados_aprendizado
+)
+
+salvar_no_github(
+    "aprendizado_copa.csv"
+)
+
+    
     salvar_no_github(
         ARQUIVO_HISTORICO
     )
