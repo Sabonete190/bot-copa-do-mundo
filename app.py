@@ -156,14 +156,6 @@ def salvar_no_github(nome_arquivo):
         json=data
     )
 
-    st.write(
-        "GitHub Status:",
-        response.status_code
-    )
-
-    st.write(
-        response.text
-    )
 
 def salvar_aposta(dados):
 
