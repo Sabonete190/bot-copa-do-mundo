@@ -150,10 +150,19 @@ def salvar_no_github(nome_arquivo):
     if sha:
         data["sha"] = sha
 
-    requests.put(
+    response = requests.put(
         url,
         headers=headers,
         json=data
+    )
+
+    st.write(
+        "GitHub Status:",
+        response.status_code
+    )
+
+    st.write(
+        response.text
     )
 
 def salvar_aposta(dados):
