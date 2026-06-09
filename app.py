@@ -1153,6 +1153,16 @@ if st.button("🚀 ANALISAR JOGO"):
     prob_casa_modelo /= soma_modelo
     prob_fora_modelo /= soma_modelo
     prob_empate_modelo /= soma_modelo
+    
+    st.session_state["prob_casa_modelo"] = prob_casa_modelo
+
+    st.session_state["prob_empate_modelo"] = prob_empate_modelo
+
+    st.session_state["prob_fora_modelo"] = prob_fora_modelo
+
+    st.session_state["prob_over25"] = prob_over25
+
+    st.session_state["prob_btts_sim"] = prob_btts_sim
 
     st.subheader("Probabilidades do Modelo")
 
@@ -1707,15 +1717,45 @@ if st.button("Salvar Aposta"):
 
         "Campeonato": campeonato,
 
-        "Prob Casa": round(prob_casa_modelo, 4),
+        "Prob Casa": round(
+            st.session_state.get(
+                "prob_casa_modelo",
+                0
+            ),
+            4
+        ),
 
-        "Prob Empate": round(prob_empate_modelo, 4),
+        "Prob Empate": round(
+            st.session_state.get(
+                "prob_empate_modelo",
+                0
+            ),
+            4
+        ),
 
-        "Prob Fora": round(prob_fora_modelo, 4),
+        "Prob Fora": round(
+            st.session_state.get(
+                "prob_fora_modelo",
+                0
+            ),
+            4
+        ),
 
-        "Prob Over25": round(prob_over25, 4),
+        "Prob Over25": round(
+            st.session_state.get(
+                "prob_over25",
+                0
+            ),
+            4
+        ),
 
-        "Prob BTTS": round(prob_btts_sim, 4),
+        "Prob BTTS": round(
+            st.session_state.get(
+                "prob_btts_sim",
+                0
+            ),
+            4
+        ),
 
         "Mercado": st.session_state.get(
             "melhor_mercado",
