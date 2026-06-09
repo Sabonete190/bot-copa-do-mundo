@@ -411,12 +411,6 @@ with st.expander("🔥 BTTS"):
      )
 
 
-    posicao_fora = st.number_input(
-        "Posição Time Fora",
-        min_value=1,
-        max_value=20,
-        value=10
-     )
 # =========================
 # DADOS DOS TIMES
 # =========================
