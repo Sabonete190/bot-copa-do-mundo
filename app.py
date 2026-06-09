@@ -1837,9 +1837,18 @@ if st.button("Salvar Aposta"):
 
         "Probabilidade": round(
             max(
-                prob_casa_modelo,
-                prob_empate_modelo,
-                prob_fora_modelo
+                st.session_state.get(
+                    "prob_casa_modelo",
+                    0
+                ),
+                st.session_state.get(
+                    "prob_empate_modelo",
+                    0
+                ),
+                st.session_state.get(
+                    "prob_fora_modelo",
+                    0
+                )
             ),
             4
         ),
