@@ -1914,6 +1914,11 @@ if st.button("Salvar Aposta"):
             prob_aprendizado,
             4
         ),
+        
+        "Perfil": st.session_state.get(
+          "perfil_jogo",
+          "N/A"
+        ),
         "Resultado": "PENDENTE"
     }
 
