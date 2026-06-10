@@ -2552,3 +2552,7 @@ if os.path.exists("aprendizado_copa.csv"):
 
                     st.divider()
 
+    except:
+
+        pass
+
