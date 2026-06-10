@@ -2485,6 +2485,75 @@ if os.path.exists("aprendizado_copa.csv"):
 
                 st.divider()
 
+# =========================
+# ROI POR MERCADO
+# =========================
+
+st.subheader(
+    "💰 ROI por Mercado"
+)
+
+if os.path.exists(
+    "resultados_copa.csv"
+):
+
+    df_roi = pd.read_csv(
+        "resultados_copa.csv"
+    )
+
+    mercados_roi = (
+        df_roi["Mercado"]
+        .dropna()
+        .unique()
+    )
+
+    for mercado in mercados_roi:
+
+        df_mercado = df_roi[
+            df_roi["Mercado"]
+            == mercado
+        ]
+
+        stake_total = (
+            df_mercado["Stake R$"]
+            .sum()
+        )
+
+        lucro_total = (
+            df_mercado["Lucro"]
+            .sum()
+        )
+
+        if stake_total > 0:
+
+            roi = (
+                lucro_total
+                / stake_total
+            ) * 100
+
+        else:
+
+            roi = 0
+
+        st.write(
+            f"🎯 {mercado}"
+        )
+
+        st.write(
+            f"💰 ROI: {round(roi,2)}%"
+        )
+
+        st.write(
+            f"📈 Lucro: R$ {round(lucro_total,2)}"
+        )
+
+        st.write(
+            f"💵 Stake: R$ {round(stake_total,2)}"
+        )
+
+        st.divider()
+                
+
     except:
 
         pass
