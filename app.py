@@ -245,11 +245,11 @@ def atualizar_pesos():
         
         fator_elo = 1.00
 
-        if len(df) >= 20:
+    if len(df) >= 20:
 
-        taxa_geral = (
+       taxa_geral = (
 
-        len(
+         len(
             df[
                 df["Resultado"]
                 == "GREEN"
