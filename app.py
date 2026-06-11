@@ -228,7 +228,7 @@ def atualizar_pesos():
 
         return
 
-    try:
+try:
 
     df = pd.read_csv(
         arquivo
@@ -269,6 +269,7 @@ def atualizar_pesos():
             2
 
         )
+    
         # =========================
         # UNDER 2.5
         # =========================
