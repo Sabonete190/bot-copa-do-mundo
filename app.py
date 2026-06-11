@@ -2168,11 +2168,35 @@ if os.path.exists("aprendizado_copa.csv"):
         salvar_no_github(
             "aprendizado_copa.csv"
         )
-        atualizar_pesos()
 
-        salvar_no_github(
-            "pesos_modelo.csv"
+        df_aprendizado_atual = pd.read_csv(
+            "aprendizado_copa.csv"
         )
+
+        jogos_finalizados = len(
+
+            df_aprendizado_atual[
+
+                df_aprendizado_atual[
+                    "Resultado"
+                ] != "PENDENTE"
+
+            ]
+
+        )
+
+        if jogos_finalizados % 24 == 0:
+
+            atualizar_pesos()
+
+            salvar_no_github(
+                "pesos_modelo.csv"
+            )
+
+            st.success(
+                f"🧠 Pesos atualizados após "
+                f"{jogos_finalizados} jogos"
+            )
 
     except:
 
