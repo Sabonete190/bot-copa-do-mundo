@@ -635,6 +635,37 @@ peso_under = 1.00
 
 peso_btts = 1.00
 
+fator_elo = 1.00
+
+if os.path.exists(
+    "pesos_modelo.csv"
+):
+
+    try:
+
+        df_pesos = pd.read_csv(
+            "pesos_modelo.csv"
+        )
+
+        peso_under = (
+            df_pesos.iloc[0]
+            ["peso_under"]
+        )
+
+        peso_btts = (
+            df_pesos.iloc[0]
+            ["peso_btts"]
+        )
+
+        fator_elo = (
+            df_pesos.iloc[0]
+            ["fator_elo"]
+        )
+
+    except:
+
+        pass
+
 # =========================
 # AJUSTE POR FASE
 # =========================
