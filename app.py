@@ -247,7 +247,7 @@ def atualizar_pesos():
 
         if len(df) >= 20:
 
-     taxa_geral = (
+        taxa_geral = (
 
         len(
             df[
