@@ -230,44 +230,45 @@ def atualizar_pesos():
 
     try:
 
-    df = pd.read_csv(
-        arquivo
-    )
+        df = pd.read_csv(
+            arquivo
+        )
 
-    df = df[
-        df["Resultado"]
-        != "PENDENTE"
-    ]
+        df = df[
+            df["Resultado"]
+            != "PENDENTE"
+        ]
 
-    peso_under = 1.00
+        peso_under = 1.00
 
-    peso_btts = 1.00
+        peso_btts = 1.00
 
-    fator_elo = 1.00
-    if len(df) >= 20:
+        fator_elo = 1.00
 
-        taxa_geral = (
+        if len(df) >= 20:
 
-            len(
-                df[
-                    df["Resultado"]
-                    == "GREEN"
-                ]
+            taxa_geral = (
+
+                len(
+                    df[
+                        df["Resultado"]
+                        == "GREEN"
+                    ]
+                )
+
+                / len(df)
+
             )
 
-            / len(df)
+            fator_elo = round(
 
-        )
+                0.80 +
 
-        fator_elo = round(
+                (taxa_geral * 0.40),
 
-            0.80 +
+                2
 
-            (taxa_geral * 0.40),
-
-            2
-
-        )
+            )
         # =========================
         # UNDER 2.5
         # =========================
