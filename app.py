@@ -348,7 +348,7 @@ try:
 
             "peso_under": peso_under,
 
-            "peso_btts": peso_btts
+            "peso_btts": peso_btts,
             
             "fator_elo": fator_elo
 
