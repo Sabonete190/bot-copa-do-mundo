@@ -228,7 +228,7 @@ def atualizar_pesos():
 
         return
 
-try:
+    try:
 
     df = pd.read_csv(
         arquivo
