@@ -247,28 +247,28 @@ try:
 
     if len(df) >= 20:
 
-        taxa_geral = (
+    taxa_geral = (
 
-            len(
-                df[
-                    df["Resultado"]
-                    == "GREEN"
-                ]
-            )
-
-            / len(df)
-
+        len(
+            df[
+                df["Resultado"]
+                == "GREEN"
+            ]
         )
 
-        fator_elo = round(
+        / len(df)
 
-            0.80 +
+    )
 
-            (taxa_geral * 0.40),
+    fator_elo = round(
 
-            2
+        0.80 +
 
-        )
+        (taxa_geral * 0.40),
+
+        2
+
+    )
     
         # =========================
         # UNDER 2.5
