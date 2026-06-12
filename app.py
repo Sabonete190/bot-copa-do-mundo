@@ -675,6 +675,13 @@ if os.path.exists(
             df_pesos.iloc[0]
             ["fator_elo"]
         )
+        
+        fator_forma = (
+
+            df_pesos.iloc[0]
+            ["fator_forma"]
+
+        )
 
     except:
 
