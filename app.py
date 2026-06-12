@@ -245,7 +245,7 @@ def atualizar_pesos():
 
         fator_elo = 1.00
         
-        fator_forma = 1.00
+        fator_forma = 0.10
 
         if len(df) >= 20:
 
@@ -273,11 +273,11 @@ def atualizar_pesos():
             )
             fator_forma = round(
 
-            0.80 +
+            0.05 +
 
-            (taxa_geral * 0.40),
+            (taxa_geral * 0.10),
 
-            2
+            3
 
             )
         # =========================
@@ -641,7 +641,7 @@ media_empate_liga = 0.23
 
 peso_elo = 2000
 
-peso_forma = 100
+peso_forma = 0.10
 
 fator_forma = 1.00
 
@@ -737,7 +737,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     eficiencia_casa * 0.15 +
 
-    (forma_casa / 15) * 0.10 +
+    (forma_casa / 15) * peso_forma +
 
     forca_casa_valor * 0.10
 )
@@ -750,7 +750,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     eficiencia_fora * 0.15 +
 
-    (forma_fora / 15) * 0.10 +
+    (forma_fora / 15) * peso_forma +
 
     forca_fora_valor * 0.10
 )
