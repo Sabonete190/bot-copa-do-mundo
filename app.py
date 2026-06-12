@@ -792,7 +792,8 @@ if st.button("🚀 ANALISAR JOGO"):
     )
 
     ajuste_elo = (
-       diferenca_elo / peso_elo
+    diferenca_elo
+    / (peso_elo / fator_elo)
     )
 
     ajuste_elo = max(
