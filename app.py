@@ -244,6 +244,8 @@ def atualizar_pesos():
         peso_btts = 1.00
 
         fator_elo = 1.00
+        
+        fator_forma = 1.00
 
         if len(df) >= 20:
 
@@ -267,6 +269,15 @@ def atualizar_pesos():
                 (taxa_geral * 0.40),
 
                 2
+
+            )
+            fator_forma = round(
+
+            0.80 +
+
+            (taxa_geral * 0.40),
+
+            2
 
             )
         # =========================
@@ -351,7 +362,9 @@ def atualizar_pesos():
 
             "peso_btts": peso_btts,
             
-            "fator_elo": fator_elo
+            "fator_elo": fator_elo,
+            
+            "fator_forma": fator_forma
 
         }])
 
@@ -629,6 +642,8 @@ media_empate_liga = 0.23
 peso_elo = 2000
 
 peso_forma = 100
+
+fator_forma = 1.00
 
 peso_under = 1.00
 
