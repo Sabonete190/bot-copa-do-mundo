@@ -744,8 +744,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     eficiencia_casa * 0.15 +
 
-    (forma_casa / 15) * peso_forma +
-
+    (forma_casa / 15) * fator_forma +
     forca_casa_valor * 0.10
 )
 
@@ -757,8 +756,8 @@ if st.button("🚀 ANALISAR JOGO"):
 
     eficiencia_fora * 0.15 +
 
-    (forma_fora / 15) * peso_forma +
-
+    (forma_fora / 15) * fator_forma +
+        
     forca_fora_valor * 0.10
 )
 
