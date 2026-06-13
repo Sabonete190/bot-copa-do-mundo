@@ -246,6 +246,8 @@ def atualizar_pesos():
         fator_elo = 1.00
         
         fator_forma = 0.10
+        
+        fator_xg = 0.35
 
         if len(df) >= 20:
 
@@ -276,6 +278,16 @@ def atualizar_pesos():
             0.05 +
 
             (taxa_geral * 0.10),
+
+            3
+
+            )
+            
+            fator_xg = round(
+
+              0.20 +
+
+              (taxa_geral * 0.30),
 
             3
 
