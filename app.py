@@ -377,6 +377,8 @@ def atualizar_pesos():
             "fator_elo": fator_elo,
             
             "fator_forma": fator_forma
+            
+            "fator_xg": fator_xg,
 
         }])
 
@@ -694,6 +696,12 @@ if os.path.exists(
             ["fator_forma"]
 
         )
+        fator_xg = (
+
+            df_pesos.iloc[0]
+            ["fator_xg"]
+
+        )
 
     except:
 
@@ -750,7 +758,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     ataque_casa = (
 
-    xg_casa * 0.35 +
+    xg_casa * fator_xg +
 
     chutes_casa * 0.20 +
 
@@ -762,7 +770,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     ataque_fora = (
 
-    xg_fora * 0.35 +
+    xg_fora * fator_xg +
 
     chutes_fora * 0.20 +
 
