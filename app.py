@@ -390,7 +390,9 @@ def atualizar_pesos():
             
             "fator_forma": fator_forma,
             
-            "fator_xg": fator_xg
+            "fator_xg": fator_xg,
+            
+            "fator_xga": fator_xga
 
         }])
 
@@ -714,6 +716,12 @@ if os.path.exists(
             ["fator_xg"]
 
         )
+        fator_xga = (
+
+            df_pesos.iloc[0]
+            ["fator_xga"]
+
+        )
 
     except:
 
@@ -798,12 +806,12 @@ if st.button("🚀 ANALISAR JOGO"):
     # =========================
 
     defesa_casa = (
-        xga_casa * 0.6 +
+        xga_casa * fator_xga +
         sofridos_casa * 0.4
     )
 
     defesa_fora = (
-        xga_fora * 0.6 +
+        xga_fora * fator_xga +
         sofridos_fora * 0.4
     )
 
