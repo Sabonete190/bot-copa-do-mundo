@@ -376,9 +376,9 @@ def atualizar_pesos():
             
             "fator_elo": fator_elo,
             
-            "fator_forma": fator_forma
+            "fator_forma": fator_forma,
             
-            "fator_xg": fator_xg,
+            "fator_xg": fator_xg
 
         }])
 
