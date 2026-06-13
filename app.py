@@ -248,6 +248,8 @@ def atualizar_pesos():
         fator_forma = 0.10
         
         fator_xg = 0.35
+        
+        fator_xga = 0.60
 
         if len(df) >= 20:
 
@@ -288,6 +290,16 @@ def atualizar_pesos():
               0.20 +
 
               (taxa_geral * 0.30),
+
+            3
+
+            )
+            
+            fator_xga = round(
+
+             0.40 +
+                
+            (taxa_geral * 0.40),
 
             3
 
