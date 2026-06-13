@@ -250,6 +250,8 @@ def atualizar_pesos():
         fator_xg = 0.35
         
         fator_xga = 0.60
+        
+        fator_eficiencia = 0.15
 
         if len(df) >= 20:
 
@@ -300,6 +302,16 @@ def atualizar_pesos():
              0.40 +
                 
             (taxa_geral * 0.40),
+
+            3
+
+            )
+            
+            fator_eficiencia = round(
+
+             0.10 +
+
+            (taxa_geral * 0.10),
 
             3
 
@@ -392,7 +404,9 @@ def atualizar_pesos():
             
             "fator_xg": fator_xg,
             
-            "fator_xga": fator_xga
+            "fator_xga": fator_xga,
+            
+            "fator_eficiencia": fator_eficiencia
 
         }])
 
@@ -722,6 +736,13 @@ if os.path.exists(
             ["fator_xga"]
 
         )
+        
+        fator_eficiencia = (
+
+            df_pesos.iloc[0]
+            ["fator_eficiencia"]
+
+        )
 
     except:
 
@@ -782,9 +803,10 @@ if st.button("🚀 ANALISAR JOGO"):
 
     chutes_casa * 0.20 +
 
-    eficiencia_casa * 0.15 +
-
+    eficiencia_casa * fator_eficiencia +
+        
     (forma_casa / 15) * fator_forma +
+        
     forca_casa_valor * 0.10
 )
 
@@ -794,7 +816,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     chutes_fora * 0.20 +
 
-    eficiencia_fora * 0.15 +
+    eficiencia_fora * fator_eficiencia +
 
     (forma_fora / 15) * fator_forma +
         
