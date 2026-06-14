@@ -363,6 +363,8 @@ def atualizar_pesos():
         fator_xga = 0.60
         
         fator_eficiencia = 0.15
+        
+        fator_chutes = 0.20
 
         if len(df) >= 20:
 
@@ -513,7 +515,7 @@ def atualizar_pesos():
 
             )
             
-            df_mercados = pd.DataFrame(
+        df_mercados = pd.DataFrame(
 
             list(
                 desempenho_mercados.items()
