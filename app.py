@@ -1377,9 +1377,9 @@ if st.button("🚀 ANALISAR JOGO"):
 
                     fator_btts_sim = fator
 
-            except:
+        except:
 
-                pass
+            pass
     # =========================
     # EDGE OVER/BTTS
     # =========================
