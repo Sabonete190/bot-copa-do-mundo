@@ -440,6 +440,27 @@ def atualizar_pesos():
                 2
 
             )
+            
+            df_mercados = pd.DataFrame(
+
+            list(
+                desempenho_mercados.items()
+            ),
+
+            columns=[
+                "Mercado",
+                "Taxa_Acerto"
+            ]
+
+        )
+
+        df_mercados.to_csv(
+
+            "mercados_modelo.csv",
+
+            index=False
+
+        )
 
         df_pesos = pd.DataFrame([{
 
