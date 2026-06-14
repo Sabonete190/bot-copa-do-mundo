@@ -217,6 +217,78 @@ def salvar_aprendizado(dados):
         arquivo,
         index=False
     )
+    
+def ajustar_por_mercado(
+
+    mercado,
+
+    probabilidade
+
+):
+
+    try:
+
+        if not os.path.exists(
+
+            "mercados_modelo.csv"
+
+        ):
+
+            return probabilidade
+
+        df_mercados = pd.read_csv(
+
+            "mercados_modelo.csv"
+
+        )
+
+        linha = df_mercados[
+
+            df_mercados["Mercado"]
+
+            == mercado
+
+        ]
+
+        if linha.empty:
+
+            return probabilidade
+
+        taxa = float(
+
+            linha.iloc[0]
+
+            ["Taxa_Acerto"]
+
+        )
+
+        ajuste = (
+
+            taxa - 0.50
+
+        ) * 0.20
+
+        probabilidade += ajuste
+
+        probabilidade = max(
+
+            0.01,
+
+            min(
+
+                probabilidade,
+
+                0.99
+
+            )
+
+        )
+
+        return probabilidade
+
+    except:
+
+        return probabilidade
 
 def atualizar_pesos():
 
