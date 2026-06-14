@@ -1328,6 +1328,58 @@ if st.button("🚀 ANALISAR JOGO"):
         f"EV BTTS NÃO: "
         f"{round(ev_btts_nao, 2)}"
     )
+    
+    fator_casa = 1.00
+
+    fator_empate = 1.00
+
+    fator_fora = 1.00
+
+    fator_over25 = 1.00
+
+    fator_under25 = 1.00
+
+    fator_btts_sim = 1.00
+
+    fator_btts_nao = 1.00
+
+    if os.path.exists(
+
+    "mercados_modelo.csv"
+
+):
+
+    try:
+
+        df_mercados = pd.read_csv(
+
+            "mercados_modelo.csv"
+
+        )
+
+        for _, linha in df_mercados.iterrows():
+
+            mercado = linha["Mercado"]
+
+            taxa = linha["Taxa_Acerto"]
+
+            fator = 0.80 + (
+
+                taxa * 0.40
+
+            )
+
+            if mercado == "Under 2.5":
+
+                fator_under25 = fator
+
+            elif mercado == "BTTS SIM":
+
+                fator_btts_sim = fator
+
+    except:
+
+        pass
     # =========================
     # EDGE OVER/BTTS
     # =========================
