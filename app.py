@@ -316,6 +316,16 @@ def atualizar_pesos():
             3
 
             )
+            
+            fator_chutes = round(
+
+             0.10 +
+
+            (taxa_geral * 0.20),
+
+            3
+
+            )
         # =========================
         # UNDER 2.5
         # =========================
@@ -406,7 +416,9 @@ def atualizar_pesos():
             
             "fator_xga": fator_xga,
             
-            "fator_eficiencia": fator_eficiencia
+            "fator_eficiencia": fator_eficiencia,
+            
+            "fator_chutes": fator_chutes
 
         }])
 
@@ -743,6 +755,12 @@ if os.path.exists(
             ["fator_eficiencia"]
 
         )
+        fator_chutes = (
+
+            df_pesos.iloc[0]
+            ["fator_chutes"]
+
+        )
 
     except:
 
@@ -801,7 +819,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     xg_casa * fator_xg +
 
-    chutes_casa * 0.20 +
+    chutes_casa * fator_chutes +
 
     eficiencia_casa * fator_eficiencia +
         
@@ -814,7 +832,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     xg_fora * fator_xg +
 
-    chutes_fora * 0.20 +
+    chutes_fora * fator_chutes +
 
     eficiencia_fora * fator_eficiencia +
 
