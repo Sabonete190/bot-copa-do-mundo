@@ -1345,41 +1345,41 @@ if st.button("🚀 ANALISAR JOGO"):
 
     if os.path.exists(
 
-    "mercados_modelo.csv"
+        "mercados_modelo.csv"
 
-):
+    ):
 
-    try:
+        try:
 
-        df_mercados = pd.read_csv(
+            df_mercados = pd.read_csv(
 
-            "mercados_modelo.csv"
-
-        )
-
-        for _, linha in df_mercados.iterrows():
-
-            mercado = linha["Mercado"]
-
-            taxa = linha["Taxa_Acerto"]
-
-            fator = 0.80 + (
-
-                taxa * 0.40
+                "mercados_modelo.csv"
 
             )
 
-            if mercado == "Under 2.5":
+            for _, linha in df_mercados.iterrows():
 
-                fator_under25 = fator
+                mercado = linha["Mercado"]
 
-            elif mercado == "BTTS SIM":
+                taxa = linha["Taxa_Acerto"]
 
-                fator_btts_sim = fator
+                fator = 0.80 + (
 
-    except:
+                    taxa * 0.40
 
-        pass
+                )
+
+                if mercado == "Under 2.5":
+
+                    fator_under25 = fator
+
+                elif mercado == "BTTS SIM":
+
+                    fator_btts_sim = fator
+
+            except:
+
+                pass
     # =========================
     # EDGE OVER/BTTS
     # =========================
