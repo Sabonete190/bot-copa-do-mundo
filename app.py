@@ -1385,19 +1385,34 @@ if st.button("🚀 ANALISAR JOGO"):
     # =========================
 
     edge_over25 = (
+
         prob_over25 -
+
         (1 / odd_over25)
+
     )
 
+    edge_over25 *= fator_over25
+    
     edge_under25 = (
+
         prob_under25 -
+
         (1 / odd_under25)
+
     )
+
+    edge_under25 *= fator_under25
 
     edge_btts_sim = (
+
         prob_btts_sim -
+
         (1 / odd_btts_sim)
+
     )
+
+    edge_btts_sim *= fator_btts_sim
 
     edge_btts_nao = (
         prob_btts_nao -
