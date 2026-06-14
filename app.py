@@ -1415,9 +1415,14 @@ if st.button("🚀 ANALISAR JOGO"):
     edge_btts_sim *= fator_btts_sim
 
     edge_btts_nao = (
+        
         prob_btts_nao -
+        
         (1 / odd_btts_nao)
+        
     )
+
+    edge_btts_nao *= fator_btts_nao
 
     st.subheader("Edge Over/BTTS")
 
