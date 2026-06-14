@@ -238,6 +238,45 @@ def atualizar_pesos():
             df["Resultado"]
             != "PENDENTE"
         ]
+        desempenho_mercados = {}
+
+        mercados = (
+            df["Mercado"]
+            .unique()
+        )
+
+        for mercado in mercados:
+
+            df_mercado = df[
+                df["Mercado"]
+                == mercado
+            ]
+
+            if len(
+                df_mercado
+            ) >= 10:
+
+                taxa = (
+
+                    len(
+                        df_mercado[
+                            df_mercado["Resultado"]
+                            == "GREEN"
+                        ]
+                    )
+
+                    / len(
+                        df_mercado
+                    )
+
+                )
+
+                desempenho_mercados[
+                    mercado
+                ] = round(
+                    taxa,
+                    3
+                )
 
         peso_under = 1.00
 
