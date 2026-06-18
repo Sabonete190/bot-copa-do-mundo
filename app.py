@@ -1657,15 +1657,21 @@ if st.button("🚀 ANALISAR JOGO"):
         (1 / odd_casa)
     )
 
+    edge_casa *= fator_casa
+
     edge_empate = (
         prob_empate_modelo -
         (1 / odd_empate)
     )
 
+    edge_empate *= fator_empate
+
     edge_fora = (
         prob_fora_modelo -
         (1 / odd_fora)
     )
+
+    edge_fora *= fator_fora
 
     st.subheader("Edge 1X2")
 
