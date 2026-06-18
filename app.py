@@ -1373,9 +1373,29 @@ if st.button("🚀 ANALISAR JOGO"):
 
                     fator_under25 = fator
 
+                elif mercado == "Over 2.5":
+
+                    fator_over25 = fator
+
                 elif mercado == "BTTS SIM":
 
                     fator_btts_sim = fator
+
+                elif mercado == "BTTS NÃO":
+
+                    fator_btts_nao = fator
+
+                elif mercado == "Casa":
+
+                    fator_casa = fator
+
+                elif mercado == "Empate":
+
+                    fator_empate = fator
+
+                elif mercado == "Fora":
+
+                    fator_fora = fator
 
         except:
 
