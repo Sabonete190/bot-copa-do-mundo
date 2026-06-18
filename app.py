@@ -1542,6 +1542,24 @@ if st.button("🚀 ANALISAR JOGO"):
     prob_fora_modelo /= soma_modelo
     prob_empate_modelo /= soma_modelo
     
+    # =========================
+    # PERFIL DO JOGO
+    # =========================
+
+    if abs(
+
+        prob_casa_modelo -
+
+        prob_fora_modelo
+
+    ) > 0.20:
+
+        perfil_jogo = "FAVORITO_FORTE"
+
+    else:
+
+        perfil_jogo = "EQUILIBRADO"
+    
     st.session_state["prob_casa_modelo"] = prob_casa_modelo
 
     st.session_state["prob_empate_modelo"] = prob_empate_modelo
