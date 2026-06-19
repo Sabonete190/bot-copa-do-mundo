@@ -1401,6 +1401,8 @@ if st.button("🚀 ANALISAR JOGO"):
     fator_btts_sim = 1.00
 
     fator_btts_nao = 1.00
+    
+    fator_perfil = 1.00
 
     if os.path.exists(
 
