@@ -955,9 +955,9 @@ if os.path.exists(
 
         )
 
-    except:
+    except Exception as e:
 
-        pass
+    st.error(e)
 
 # =========================
 # AJUSTE POR FASE
