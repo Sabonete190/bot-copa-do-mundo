@@ -1918,6 +1918,8 @@ if st.button("🚀 ANALISAR JOGO"):
         +
         (maior_ev * 10)
     )
+    
+    confianca *= fator_perfil
 
     confianca = max(
         0,
