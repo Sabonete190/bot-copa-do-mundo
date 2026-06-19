@@ -2470,6 +2470,9 @@ if st.button("Salvar Aposta"):
     salvar_aposta(
         dados_aposta
     )
+    st.success(
+    "Aposta gravada localmente"
+    )
     prob_aprendizado = 0
 
     mercado_aprendizado = st.session_state.get(
