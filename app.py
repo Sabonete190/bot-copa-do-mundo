@@ -574,6 +574,26 @@ def atualizar_pesos():
             index=False
 
         )
+        df_perfis = pd.DataFrame(
+
+            list(
+                desempenho_perfis.items()
+            ),
+
+            columns=[
+                "Perfil",
+                "Taxa_Acerto"
+            ]
+
+        )
+
+        df_perfis.to_csv(
+
+            "perfis_modelo.csv",
+
+            index=False
+
+        )
 
         df_pesos = pd.DataFrame([{
 
