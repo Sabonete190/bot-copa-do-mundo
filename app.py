@@ -1461,6 +1461,55 @@ if st.button("🚀 ANALISAR JOGO"):
         except:
 
             pass
+            if os.path.exists(
+
+        "perfis_modelo.csv"
+
+    ):
+
+        try:
+
+            df_perfis = pd.read_csv(
+
+                "perfis_modelo.csv"
+
+            )
+
+            linha = df_perfis[
+
+                df_perfis["Perfil"]
+
+                == st.session_state.get(
+
+                    "perfil_jogo",
+
+                    "N/A"
+
+                )
+
+            ]
+
+            if not linha.empty:
+
+                taxa = float(
+
+                    linha.iloc[0]
+
+                    ["Taxa_Acerto"]
+
+                )
+
+                fator_perfil = (
+
+                    0.80 +
+
+                    (taxa * 0.40)
+
+                )
+
+        except:
+
+            pass
     # =========================
     # EDGE OVER/BTTS
     # =========================
