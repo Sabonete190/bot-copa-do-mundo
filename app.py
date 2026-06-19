@@ -1654,6 +1654,29 @@ if st.button("🚀 ANALISAR JOGO"):
     prob_fora_modelo /= soma_modelo
     prob_empate_modelo /= soma_modelo
     
+    prob_casa_modelo = ajustar_por_mercado(
+
+        "Casa",
+
+        prob_casa_modelo
+
+    )
+
+    prob_empate_modelo = ajustar_por_mercado(
+
+        "Empate",
+
+        prob_empate_modelo
+
+    )
+
+    prob_fora_modelo = ajustar_por_mercado(
+
+        "Fora",
+
+        prob_fora_modelo
+
+    )
     # =========================
     # PERFIL DO JOGO
     # =========================
