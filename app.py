@@ -351,6 +351,43 @@ def atualizar_pesos():
                     taxa,
                     3
                 )
+                perfis = (
+            df["Perfil"]
+            .unique()
+        )
+
+        for perfil in perfis:
+
+            df_perfil = df[
+                df["Perfil"]
+                == perfil
+            ]
+
+            if len(
+                df_perfil
+            ) >= 10:
+
+                taxa = (
+
+                    len(
+                        df_perfil[
+                            df_perfil["Resultado"]
+                            == "GREEN"
+                        ]
+                    )
+
+                    / len(
+                        df_perfil
+                    )
+
+                )
+
+                desempenho_perfis[
+                    perfil
+                ] = round(
+                    taxa,
+                    3
+                )
 
         peso_under = 1.00
 
