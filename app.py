@@ -1694,8 +1694,40 @@ if st.button("🚀 ANALISAR JOGO"):
     else:
 
         perfil_jogo = "EQUILIBRADO"
-        
-        st.session_state["perfil_jogo"] = perfil_jogo
+
+    st.session_state["perfil_jogo"] = perfil_jogo
+    
+    prob_over25 = ajustar_por_mercado(
+
+        "Over 2.5",
+
+        prob_over25
+
+    )
+
+    prob_under25 = ajustar_por_mercado(
+
+        "Under 2.5",
+
+        prob_under25
+
+    )
+
+    prob_btts_sim = ajustar_por_mercado(
+
+        "BTTS SIM",
+
+        prob_btts_sim
+
+    )
+
+    prob_btts_nao = ajustar_por_mercado(
+
+        "BTTS NÃO",
+
+        prob_btts_nao
+
+    )
     
     st.session_state["prob_casa_modelo"] = prob_casa_modelo
 
