@@ -1461,7 +1461,7 @@ if st.button("🚀 ANALISAR JOGO"):
         except:
 
             pass
-            if os.path.exists(
+    if os.path.exists(
 
         "perfis_modelo.csv"
 
@@ -1493,9 +1493,11 @@ if st.button("🚀 ANALISAR JOGO"):
 
                 taxa = float(
 
-                    linha.iloc[0]
+                    linha.iloc[0][
 
-                    ["Taxa_Acerto"]
+                        "Taxa_Acerto"
+
+                    ]
 
                 )
 
