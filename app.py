@@ -955,9 +955,9 @@ if os.path.exists(
 
         )
 
-    except Exception as e:
+except Exception as e:
 
-    st.error(e)
+  st.error(f"Erro ao carregar pesos: {e}")
 
 # =========================
 # AJUSTE POR FASE
