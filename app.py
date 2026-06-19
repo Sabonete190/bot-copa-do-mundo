@@ -898,6 +898,22 @@ peso_btts = 1.00
 
 fator_elo = 1.00
 
+peso_under = 1.00
+
+peso_btts = 1.00
+
+fator_elo = 1.00
+
+fator_forma = 0.10
+
+fator_xg = 0.35
+
+fator_xga = 0.60
+
+fator_eficiencia = 0.15
+
+fator_chutes = 0.20
+
 if os.path.exists(
     "pesos_modelo.csv"
 ):
@@ -955,9 +971,9 @@ if os.path.exists(
 
         )
 
-except Exception as e:
+    except Exception as e:
 
-  st.error(f"Erro ao carregar pesos: {e}")
+      st.error(f"Erro ao carregar pesos: {e}")
 
 # =========================
 # AJUSTE POR FASE
