@@ -311,6 +311,8 @@ def atualizar_pesos():
             != "PENDENTE"
         ]
         desempenho_mercados = {}
+        
+        desempenho_perfis = {}
 
         mercados = (
             df["Mercado"]
