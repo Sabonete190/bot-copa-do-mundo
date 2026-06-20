@@ -586,6 +586,32 @@ def atualizar_pesos():
             index=False
 
         )
+        df_auditoria_mercados = pd.DataFrame(
+
+            list(
+                desempenho_mercados.items()
+            ),
+
+            columns=[
+                "Mercado",
+                "Taxa_Acerto"
+            ]
+
+        )
+
+        df_auditoria_mercados.to_csv(
+
+            "auditoria_mercados.csv",
+
+            index=False
+
+        )
+
+        salvar_no_github(
+
+            "auditoria_mercados.csv"
+
+        )
         df_perfis = pd.DataFrame(
 
             list(
