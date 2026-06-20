@@ -1,2 +1,3 @@
 ID,Time Casa,Time Fora,Campeonato,Prob Casa,Prob Empate,Prob Fora,Prob Over25,Prob BTTS,Mercado,Odd Casa,Odd Empate,Odd Fora,EV Casa,EV Empate,EV Fora,Edge Casa,Edge Empate,Edge Fora,Stake,Confiança,Perfil,Data,Probabilidade,Resultado
-1,Mexico,África do sul,Copa do mundo,0.3969,0.2275,0.3756,0.5147,0.5135,Vitória Fora,1.46,4.3,7.8,-0.42,-0.02,1.93,-0.2581,0.0051,0.253,5,10,⚖️ Equilibrado,2026-06-20,0.3969,PENDENTE
+1,Mexico,África do sul,Copa do mundo,0.3969,0.2275,0.3756,0.5147,0.5135,Vitória Fora,1.46,4.3,7.8,-0.42,-0.02,1.93,-0.2581,0.0051,0.253,5,10.0,⚖️ Equilibrado,2026-06-20,0.3969,PENDENTE
+2,Coreia do sul,África do sul,Copa do mundo,0.3688,0.225,0.4062,0.3526,0.4131,Vitória Fora,2.6,3.3,3.05,-0.04,-0.26,0.24,-0.0099,-0.0734,0.0833,2,8.271268414044721,⚖️ Equilibrado,2026-06-20,0.4062,PENDENTE
