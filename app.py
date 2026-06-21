@@ -1795,7 +1795,7 @@ if st.button("🚀 ANALISAR JOGO"):
     
     st.session_state["prob_under25"] = prob_under25
 
-st.session_state["prob_btts_nao"] = prob_btts_nao
+    st.session_state["prob_btts_nao"] = prob_btts_nao
 
     st.subheader("Probabilidades do Modelo")
 
