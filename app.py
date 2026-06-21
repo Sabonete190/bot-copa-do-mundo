@@ -2528,10 +2528,10 @@ if st.button("Salvar Aposta"):
 
     elif mercado_aprendizado == "Under 2.5":
 
-    prob_aprendizado = st.session_state.get(
+        prob_aprendizado = st.session_state.get(
         "prob_under25",
-        0
-    )
+         0
+        )
 
     elif mercado_aprendizado == "BTTS SIM":
 
@@ -2539,10 +2539,10 @@ if st.button("Salvar Aposta"):
 
     elif mercado_aprendizado == "BTTS NÃO":
 
-    prob_aprendizado = st.session_state.get(
+        prob_aprendizado = st.session_state.get(
         "prob_btts_nao",
-        0
-    )
+         0
+        )
         
     dados_aprendizado = {
 
