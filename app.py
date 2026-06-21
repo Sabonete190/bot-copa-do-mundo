@@ -1792,6 +1792,10 @@ if st.button("🚀 ANALISAR JOGO"):
     st.session_state["prob_over25"] = prob_over25
 
     st.session_state["prob_btts_sim"] = prob_btts_sim
+    
+    st.session_state["prob_under25"] = prob_under25
+
+st.session_state["prob_btts_nao"] = prob_btts_nao
 
     st.subheader("Probabilidades do Modelo")
 
@@ -2524,7 +2528,10 @@ if st.button("Salvar Aposta"):
 
     elif mercado_aprendizado == "Under 2.5":
 
-        prob_aprendizado = prob_under25
+    prob_aprendizado = st.session_state.get(
+        "prob_under25",
+        0
+    )
 
     elif mercado_aprendizado == "BTTS SIM":
 
@@ -2532,7 +2539,10 @@ if st.button("Salvar Aposta"):
 
     elif mercado_aprendizado == "BTTS NÃO":
 
-        prob_aprendizado = prob_btts_nao
+    prob_aprendizado = st.session_state.get(
+        "prob_btts_nao",
+        0
+    )
         
     dados_aprendizado = {
 
