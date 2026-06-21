@@ -2870,6 +2870,7 @@ if os.path.exists(arquivo_resultados):
         df_stats = pd.read_csv(
             arquivo_resultados
         )
+        st.write(df_stats)
 
     except:
 
