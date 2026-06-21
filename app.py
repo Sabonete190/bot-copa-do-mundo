@@ -2878,7 +2878,11 @@ if os.path.exists(arquivo_resultados):
 else:
 
     df_stats = pd.DataFrame()
+st.write(df_stats)
 
+st.write(
+    f"Linhas carregadas: {len(df_stats)}"
+    )
 # =========================
 # PAINEL
 # =========================
