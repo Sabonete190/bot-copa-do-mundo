@@ -2861,7 +2861,7 @@ if os.path.exists("aprendizado_copa.csv"):
 # ESTATÍSTICAS DO BOT
 # =========================
 
-arquivo_resultados = "aprendizado_copa.csv"
+arquivo_resultados = "resultado_copa.csv"
 
 if os.path.exists(arquivo_resultados):
 
@@ -3171,7 +3171,7 @@ if os.path.exists("aprendizado_copa.csv"):
             )
 
             if os.path.exists(
-                "aprendizado_copa.csv"
+                "resultado_copa.csv"
             ):
 
                 df_roi = pd.read_csv(
