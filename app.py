@@ -3182,8 +3182,8 @@ if os.path.exists("aprendizado_copa.csv"):
             ):
 
                 df_roi = pd.read_csv(
-                    "aprendizado_copa.csv"
-                )
+                  "resultados_apostas.csv"
+            )
 
                 mercados_roi = (
                     df_roi["Mercado"]
