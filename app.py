@@ -2744,7 +2744,7 @@ if st.button("Salvar Resultado"):
         "Lucro": round(lucro, 2)
     }
 
-    arquivo_resultados = "resultados_copa.csv"
+    arquivo_resultados = "resultados_apostas.csv"
 
     df_novo = pd.DataFrame(
         [dados_resultado]
