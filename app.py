@@ -2101,15 +2101,20 @@ if st.button("🚀 ANALISAR JOGO"):
 
     mercados = {
 
-        "🔥 Vitória Casa": edge_casa,
-        "🤝 Empate": edge_empate,
-        "🔥 Vitória Fora": edge_fora,
+        "Casa": edge_casa,
 
-        "⚽ Over 2.5": edge_over25,
-        "🛡️ Under 2.5": edge_under25,
+        "Empate": edge_empate,
 
-        "🔥 BTTS SIM": edge_btts_sim,
-        "❌ BTTS NÃO": edge_btts_nao
+        "Fora": edge_fora,
+
+        "Over 2.5": edge_over25,
+
+        "Under 2.5": edge_under25,
+
+        "BTTS SIM": edge_btts_sim,
+
+        "BTTS NÃO": edge_btts_nao
+
     }
 
     melhor_mercado = max(
