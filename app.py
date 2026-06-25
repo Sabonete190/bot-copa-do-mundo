@@ -2780,6 +2780,13 @@ if st.button("Salvar Resultado"):
         arquivo_resultados,
         index=False
     )
+    salvar_no_github(
+    "resultados_apostas.csv"
+)
+
+st.success(
+    "Resultados enviados ao GitHub"
+        )
 
 # =========================
 # ATUALIZAR APRENDIZADO
