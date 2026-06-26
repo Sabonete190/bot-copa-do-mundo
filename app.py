@@ -908,17 +908,17 @@ elo_fora = st.number_input(
 # DADOS DA COPA DO MUNDO
 # =========================
 
-media_gols_liga = 2.19
+media_gols_liga = 2.95
 
-media_btts_liga = 0.43
+media_btts_liga = 0.55
 
-media_over25_liga = 0.36
+media_over25_liga = 0.52
 
-media_mandante_liga = 0.49
+media_mandante_liga = 0.44
 
-media_visitante_liga = 0.28
+media_visitante_liga = 0.30
 
-media_empate_liga = 0.23
+media_empate_liga = 0.26
 
 # =========================
 # PESOS DINÂMICOS
