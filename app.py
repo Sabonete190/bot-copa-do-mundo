@@ -340,7 +340,7 @@ def atualizar_pesos():
 
             if len(
                 df_mercado
-            ) >= 10:
+            ) >= 8:
 
                 taxa = (
 
@@ -501,7 +501,7 @@ def atualizar_pesos():
 
         if len(
             df_under
-        ) >= 20:
+        ) >= 10:
 
             taxa = (
 
@@ -539,7 +539,7 @@ def atualizar_pesos():
 
         if len(
             df_btts
-        ) >= 20:
+        ) >= 10:
 
             taxa = (
 
