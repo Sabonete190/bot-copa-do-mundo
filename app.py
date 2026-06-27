@@ -2788,6 +2788,19 @@ if st.button("Salvar Resultado"):
     salvar_no_github(
     "resultados_apostas.csv"
 )
+    atualizar_pesos()
+
+salvar_no_github(
+    "pesos_modelo.csv"
+)
+
+salvar_no_github(
+    "mercados_modelo.csv"
+)
+
+salvar_no_github(
+    "perfis_modelo.csv"
+        )
 
 st.success(
     "Resultados enviados ao GitHub"
