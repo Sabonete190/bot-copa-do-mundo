@@ -518,6 +518,29 @@ def atualizar_pesos():
             3
 
             )
+# =========================
+# ATUALIZAR MERCADOS
+# =========================
+
+def atualizar_mercados():
+
+    arquivo = "mercados_modelo.csv"
+
+    if not os.path.exists(arquivo):
+
+        pd.DataFrame(columns=[
+            "Mercado",
+            "Apostas",
+            "Wins",
+            "Losses",
+            "Win Rate",
+            "Lucro",
+            "ROI"
+        ]).to_csv(arquivo, index=False)
+
+    df = pd.read_csv(arquivo)
+
+    return
         # =========================
         # UNDER 2.5
         # =========================
