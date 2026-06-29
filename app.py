@@ -123,6 +123,34 @@ GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 GITHUB_USER = st.secrets["GITHUB_USER"]
 GITHUB_REPO = st.secrets["GITHUB_REPO"]
 
+# =========================
+# CRIAR ARQUIVOS DO MODELO
+# =========================
+
+if not os.path.exists("mercados_modelo.csv"):
+
+    pd.DataFrame(columns=[
+        "Mercado",
+        "Apostas",
+        "Wins",
+        "Losses",
+        "Win Rate",
+        "Lucro",
+        "ROI"
+    ]).to_csv("mercados_modelo.csv", index=False)
+
+if not os.path.exists("perfis_modelo.csv"):
+
+    pd.DataFrame(columns=[
+        "Perfil",
+        "Apostas",
+        "Wins",
+        "Losses",
+        "Win Rate",
+        "Lucro",
+        "ROI"
+    ]).to_csv("perfis_modelo.csv", index=False)
+
 def salvar_no_github(nome_arquivo):
 
     url = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/contents/{nome_arquivo}"
