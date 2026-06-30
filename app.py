@@ -330,6 +330,49 @@ def ajustar_por_mercado(
 
         return probabilidade
 
+def calibrar_probabilidade(
+    mercado,
+    probabilidade
+):
+
+    try:
+
+        if not os.path.exists(
+            "calibracao_modelo.csv"
+        ):
+            return probabilidade
+
+        df = pd.read_csv(
+            "calibracao_modelo.csv"
+        )
+
+        linha = df[
+            df["Mercado"] == mercado
+        ]
+
+        if linha.empty:
+            return probabilidade
+
+        fator = float(
+            linha.iloc[0]["Fator"]
+        )
+
+        probabilidade *= fator
+
+        probabilidade = max(
+            0.01,
+            min(
+                probabilidade,
+                0.99
+            )
+        )
+
+        return probabilidade
+
+    except:
+
+        return probabilidade
+
 def atualizar_pesos():
 
     arquivo = "aprendizado_copa.csv"
