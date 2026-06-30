@@ -1805,78 +1805,78 @@ if st.button("🚀 ANALISAR JOGO"):
         prob_fora_modelo
 
     )
-# =========================
-# CALIBRAÇÃO DAS PROBABILIDADES
-# =========================
+    # =========================
+        # CALIBRAÇÃO DAS PROBABILIDADES
+        # =========================
 
-dados_calibracao = []
+        dados_calibracao = []
 
-mercados = df["Mercado"].unique()
+        mercados = df["Mercado"].unique()
 
-for mercado in mercados:
+        for mercado in mercados:
 
-    df_mercado = df[df["Mercado"] == mercado]
+            df_mercado = df[df["Mercado"] == mercado]
 
-    if len(df_mercado) < 10:
-        continue
+            if len(df_mercado) < 10:
+                continue
 
-    taxa_real = (
-        len(
-            df_mercado[
-                df_mercado["Resultado"] == "GREEN"
-            ]
+            taxa_real = (
+                len(
+                    df_mercado[
+                        df_mercado["Resultado"] == "GREEN"
+                    ]
+                )
+                / len(df_mercado)
+            )
+
+            prob_media = df_mercado["Probabilidade"].mean()
+
+            if prob_media <= 0:
+                fator = 1.00
+            else:
+                fator = taxa_real / prob_media
+
+            fator = max(
+                0.80,
+                min(
+                    fator,
+                    1.20
+                )
+            )
+
+            dados_calibracao.append({
+
+                "Mercado": mercado,
+
+                "Probabilidade_Modelo": round(
+                    prob_media,
+                    4
+                ),
+
+                "Taxa_Real": round(
+                    taxa_real,
+                    4
+                ),
+
+                "Fator": round(
+                    fator,
+                    4
+                )
+
+            })
+
+        df_calibracao = pd.DataFrame(
+            dados_calibracao
         )
-        / len(df_mercado)
-    )
 
-    prob_media = df_mercado["Probabilidade"].mean()
-
-    if prob_media <= 0:
-        fator = 1.00
-    else:
-        fator = taxa_real / prob_media
-
-    fator = max(
-        0.80,
-        min(
-            fator,
-            1.20
-        )
-    )
-
-    dados_calibracao.append({
-
-        "Mercado": mercado,
-
-        "Probabilidade_Modelo": round(
-            prob_media,
-            4
-        ),
-
-        "Taxa_Real": round(
-            taxa_real,
-            4
-        ),
-
-        "Fator": round(
-            fator,
-            4
+        df_calibracao.to_csv(
+            "calibracao_modelo.csv",
+            index=False
         )
 
-    })
-
-df_calibracao = pd.DataFrame(
-    dados_calibracao
-)
-
-df_calibracao.to_csv(
-    "calibracao_modelo.csv",
-    index=False
-)
-
-salvar_no_github(
-    "calibracao_modelo.csv"
-)
+        salvar_no_github(
+            "calibracao_modelo.csv"
+        )
     # =========================
     # PERFIL DO JOGO
     # =========================
