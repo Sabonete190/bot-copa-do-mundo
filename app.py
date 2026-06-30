@@ -1928,6 +1928,62 @@ salvar_no_github(
         prob_btts_nao
 
     )
+
+    prob_casa_modelo = calibrar_probabilidade(
+
+        "Casa",
+
+        prob_casa_modelo
+
+    )
+
+    prob_empate_modelo = calibrar_probabilidade(
+
+        "Empate",
+
+        prob_empate_modelo
+
+    )
+
+    prob_fora_modelo = calibrar_probabilidade(
+
+        "Fora",
+
+        prob_fora_modelo
+
+    )
+
+    prob_over25 = calibrar_probabilidade(
+
+        "Over 2.5",
+
+        prob_over25
+
+    )
+
+    prob_under25 = calibrar_probabilidade(
+
+        "Under 2.5",
+
+        prob_under25
+
+    )
+
+    prob_btts_sim = calibrar_probabilidade(
+
+        "BTTS SIM",
+
+        prob_btts_sim
+
+    )
+
+    prob_btts_nao = calibrar_probabilidade(
+
+        "BTTS NÃO",
+
+        prob_btts_nao
+
+    )
     
     st.session_state["prob_casa_modelo"] = prob_casa_modelo
 
