@@ -1146,7 +1146,7 @@ if st.button("🚀 ANALISAR JOGO"):
         
     (forma_casa / 15) * fator_forma +
         
-    forca_casa_valor * 0.10
+    forca_casa_valor * 0.20
 )
 
     ataque_fora = (
@@ -1159,7 +1159,7 @@ if st.button("🚀 ANALISAR JOGO"):
 
     (forma_fora / 15) * fator_forma +
         
-    forca_fora_valor * 0.10
+    forca_fora_valor * 0.20
 )
 
     # =========================
